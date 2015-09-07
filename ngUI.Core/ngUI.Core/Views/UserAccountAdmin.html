@@ -1,0 +1,71 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <h1 id="pageHeader"><span class="fa fa-users"></span> Registered Users</h1>
+            <div class="row">
+                <div class="col-xs-4">
+                    <h3>Current Page: {{ vm.currentPage }}</h3>
+                </div>
+                <div class="col-xs-4">
+                    <label for="search">Search:</label>
+                    <input ng-model="query" id="search" class="form-control" placeholder="Filter text">
+                </div>
+                <div class="col-xs-4">
+                    <label for="search">items per page:</label>
+                    <input type="number" min="1" max="100" class="form-control" ng-model="vm.pageSize">
+                </div>
+            </div>
+            <br>
+            {{vm.message}}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Admin</th>
+                                <th>Employee</th>
+                                <th>Address</th>
+                                <th>SSN</th>
+                                <th>DOB</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr dir-paginate="user in vm.users | filter:query | itemsPerPage: vm.pageSize" current-page="vm.currentPage">
+                                <td class="col-xs-2"><div data-ng-show="isAuthorized(user, 'Admin')"><i class="fa fa-star"></i></div></td>
+                                <td class="col-xs-3">
+                                    <strong>{{user.ClientEmployee.FirstName }} {{user.ClientEmployee.LastName}} </strong><br />
+                                    (Login: {{user.UserName}})
+                                </td>
+                                <td class="col-xs-3">
+                                    {{user.ClientEmployee.Street}} {{user.ClientEmployee.Unit}}<br />
+                                    {{user.ClientEmployee.City}} {{user.ClientEmployee.Region}} {{user.ClientEmployee.Postal}}
+                                </td>
+                                <td class="col-xs-1">
+                                    {{user.ClientEmployee.LastSSN}}
+                                </td>
+                                <td class="col-xs-2">
+                                    {{user.ClientEmployee.DateOfBirth | date:'M-d-yy'}}
+                                </td>
+                                <td class="col-xs-1">
+                                    <div data-ng-hide="isAuthorized(user, 'Admin')">
+                                        <button ng-show="user.Enabled" class="btn btn-danger" ng-click="vm.disableUser(user)">
+                                            <i class="fa fa-times"></i> Disable
+                                        </button>
+                                        <button ng-show="!user.Enabled" class="btn btn-success" ng-click="vm.enableUser(user)">
+                                            <i class="fa fa-plus"></i> Enable
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <dir-pagination-controls></dir-pagination-controls>
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+</div>

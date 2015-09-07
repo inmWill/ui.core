@@ -1,0 +1,23 @@
+﻿<div>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="field">
+                <label data-ng-show="vm.loginData.userName" class="show-hide">Username</label>
+                <input type="text" class="form-control input-lg input-dark-bg" data-ng-model="vm.loginData.userName" placeholder="Username" required autofocus>
+            </div>
+            <div class="field">
+                <label data-ng-show="vm.loginData.password" class="show-hide">Password</label>
+                <input type="password" class="form-control input-lg input-dark-bg" data-ng-model="vm.loginData.password" placeholder="Password" required>
+            </div>
+            <br />
+            <button class="btn btn-lg btn-primary btn-block" data-ng-click="vm.login()" id="btnLogin" type="submit">
+                Sign in
+            </button>
+            <a href="#/signup" class="pull-left">Create an account </a>
+            <a href="#/help" class="pull-right">Need help? </a><span class="clearfix"></span>
+            <div data-ng-hide="vm.message == ''" class="alert alert-danger">
+                {{vm.message}}
+            </div>
+        </div>
+    </form>
+</div>

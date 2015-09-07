@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://vswebessentials.com/schemas/v1/bundle.xsd">
+  <settings>
+    <!--Determines if the bundle file should be automatically optimized after creation/update.-->
+    <minify>true</minify>
+    <!--Determine whether to generate/re-generate this bundle on building the solution.-->
+    <runOnBuild>false</runOnBuild>
+    <!--Specifies a custom subfolder to save files to. By default, compiled output will be placed in the same folder and nested under the original file.-->
+    <outputDirectory />
+  </settings>
+  <!--The order of the <file> elements determines the order of the files in the bundle.-->
+  <files>
+
+    <!-- OCV app bootstrapping-->
+    <file>/App/core.root.module.js</file>
+
+    <!-- core -->
+    <file>/App/Core/core.module.js</file>
+    <file>/App/Core/constants.js</file>
+
+    <!-- OCV - authentication-->
+    <file>/App/Auth/core.auth.module.js</file>
+    <file>/App/Auth/Services/authInterceptorService.js</file>
+    <file>/App/Auth/Services/authService.js</file>
+    <file>/App/Auth/Services/authSession.js</file>
+    <file>/App/Auth/Controllers/authModalCtrl.js</file>
+    <file>/App/Auth/Controllers/authLoginCtrl.js</file>
+    <file>/App/Auth/Controllers/authSignupCtrl.js</file>
+    <file>/App/Auth/Controllers/authActiveUserCtrl.js</file>
+    <file>/App/Auth/authStartup.js</file>
+    <file>/App/Auth/Directives/authLogin.js</file>
+    <file>/App/Auth/Directives/authLogout.js</file>
+    <file>/App/Auth/Directives/authSignup.js</file>
+
+    <!-- OCV - clients and employees-->
+    <file>/App/Client/core.client.module.js</file>
+    <file>/App/Client/Services/clientService.js</file>
+    <file>/App/Client/Services/clientEmployeeService.js</file>
+    <file>/App/Client/Controllers/clientCtrl.js</file>
+    <file>/App/Client/Controllers/clientEmployeeCtrl.js</file>
+
+    <!-- OCV - user -->
+    <file>/App/User/core.user.module.js</file>
+    <file>/App/User/Services/userService.js</file>
+    <file>/App/User/Controllers/userController.js</file>
+    <file>/App/User/Controllers/userAdminController.js</file>
+    <file>/App/User/Directives/userActions.js</file>
+    <file>/App/User/Directives/userProfile.js</file>
+
+
+    <!-- OCV - survey -->
+    <file>/App/Survey/core.survey.module.js</file>
+    <file>/App/Survey/Services/surveyService.js</file>
+    <file>/App/Survey/Controllers/surveyController.js</file>
+
+    <!-- OCV - filters-->
+    <file>/App/Filters/core.filters.module.js</file>
+    <file>/App/Filters/core.parseTokens.js</file>
+
+
+    <file>/App/Utils/dirPagination.js</file>
+	  <file>/App/Utils/angular-input-match.min.js</file>
+
+
+
+
+    <file>/App/Metrics/Controllers/metricsChartDataCtrl.js</file>
+    <file>/App/Nav/Controllers/navActiveAuditCtrl.js</file>
+    <file>/App/Nav/Controllers/sidebarCtrl.js</file>
+    <file>/App/Nav/Controllers/navMenuCtrl.js</file>
+
+
+
+    <file>/App/Nav/Directives/navActiveAudit.js</file>
+    <file>/App/Nav/Directives/navBtnBack.js</file>
+
+    <file>/App/Nav/Directives/navMenu.js</file>
+    <file>/App/routes.js</file>
+  </files>
+</bundle>

@@ -1,0 +1,15 @@
+﻿<form class="form-horizontal" name="surveyForm">
+    <div class="form-group">
+        <div class="row" ng-repeat="answer in vm.activeQuestion.Answers">
+            <div class="col-md-12">
+                <div class="blockButton" ng-class="answer.Style">
+                    <h4>{{answer.Title}}</h4>
+                    <div ng-bind-html="answer.Description"></div>
+                    <button class="btn btn-lg btn-primary pull-right" data-ng-click="vm.submitAnswer(answer.Id, answer.NextId, answer.Action)">
+                        {{answer.LinkText}} <i class="fa fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>      
+    </div>
+</form>

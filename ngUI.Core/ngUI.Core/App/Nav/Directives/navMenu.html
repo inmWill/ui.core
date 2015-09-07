@@ -1,0 +1,19 @@
+﻿<ul class="sidebar">
+    <li class="sidebar-main">
+        <a href="#/home">
+            Core ngUI
+            <span class="menu-icon fa" data-ng-class="userData.authorized ? 'fa-lock' : 'fa-unlock-alt' "></span>
+        </a>
+    </li>
+    <li class="sidebar-title" data-ng-show="userData.authorized"><span>Main</span></li>
+    <li class="sidebar-list" data-ng-show="userData.authorized">
+        <a ui-sref="survey" ui-sref-active="active">Routing PoC <span class="menu-icon fa fa-comments-o"></span></a>
+    </li>
+    <li class="sidebar-list" data-ng-show="isAuthorized(userData.profile, ['Admin', 'ClientAdmin'])">
+        <a ui-sref="employees" ui-sref-active="active">Paging PoC <span class="menu-icon fa fa-users"></span></a>
+    </li>
+    <li class="sidebar-title" data-ng-show="isAuthorized(userData.profile, 'Admin')"><span>Super User</span></li>
+    <li class="sidebar-list" data-ng-show="isAuthorized(userData.profile, 'Admin')">
+        <a ui-sref="useraccountadmin" ui-sref-active="active">User Accounts <span class="menu-icon fa fa-users"></span></a>
+    </li>
+</ul>

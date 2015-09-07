@@ -1,0 +1,80 @@
+// Karma configuration
+// Generated on Mon Nov 03 2014 22:08:30 GMT-0700 (Mountain Standard Time)
+
+module.exports = function(config) {
+  config.set({
+
+    // base path that will be used to resolve all patterns (eg. files, exclude)
+    basePath: '',
+
+
+    // frameworks to use
+    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    frameworks: ['jasmine'],
+
+
+    // list of files / patterns to load in the browser
+    files: [
+	  'InmShow.ngUI/InmShow.ngUI/Scripts/angular.js',
+	  'InmShow.ngUI/InmShow.ngUI/Scripts/angular-route.js',
+	  'InmShow.ngUI/InmShow.ngUI/Scripts/angular-animate.js',
+	  'InmShow.ngUI/InmShow.ngUI/Scripts/loading-bar.min.js',  
+	  'InmShow.ngUI/InmShow.ngUI/Scripts/angular-local-storage.min.js',  
+	  'InmShow.ngUI/InmShow.ngUI/Scripts/angular-mocks.js',	 
+	  'InmShow.ngUI/InmShow.ngUI/app/app.js',
+	  'InmShow.ngUI/InmShow.ngUI/services/authinterceptorservice.js',
+	  'InmShow.ngUI/InmShow.ngUI/services/authservice.js',
+	  'InmShow.ngUI/InmShow.ngUI/services/abstractsservice.js',
+	  'InmShow.ngUI/InmShow.ngUI/app/nav/indexcontroller.js',
+	  'InmShow.ngUI/InmShow.ngUI/app/nav/homecontroller.js',
+	  'InmShow.ngUI/InmShow.ngUI/app/auth/logincontroller.js',
+	  'InmShow.ngUI/InmShow.ngUI/app/auth/signupcontroller.js',
+	  'InmShow.ngUI/InmShow.ngUI/app/client/clientctrl.js',
+      'InmShow.ngUI.Tests/ng-tests/*Spec.js'
+    ],
+
+
+    // list of files to exclude
+    exclude: [
+    ],
+
+
+    // preprocess matching files before serving them to the browser
+    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    preprocessors: {
+    },
+
+
+    // test results reporter to use
+    // possible values: 'dots', 'progress'
+    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+    reporters: ['spec', 'html'],
+
+
+    // web server port
+    port: 9876,
+
+
+    // enable / disable colors in the output (reporters and logs)
+    colors: true,
+
+
+    // level of logging
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    logLevel: config.LOG_INFO,
+
+
+    // enable / disable watching file and executing tests whenever any file changes
+    autoWatch: true,
+
+
+    // start these browsers
+    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+    browsers: ['Chrome'],
+
+
+    // Continuous Integration mode
+    // if true, Karma captures browsers, runs the tests and exits
+    singleRun: false
+  });
+};

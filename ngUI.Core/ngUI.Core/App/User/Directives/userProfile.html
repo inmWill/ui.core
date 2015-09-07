@@ -1,0 +1,378 @@
+﻿<form class="form-horizontal" name="userProfileForm">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Employee Information</h4>
+        </div>
+        <div class="panel-body">
+            <!-- EE Profile -->
+            <fieldset>
+                <legend>Profile</legend>
+                <!-- EE's First Name -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.firstname.$invalid}">
+                    <label class="control-label col-sm-3">First Name</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.FirstName" name="firstname" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.firstname.$invalid">
+                            Employee's First Name is required and has a max length of 150.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your given name."></i>
+                    </div>
+                </div>
+
+                <!-- EE's Last Name -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.lastname.$invalid}">
+                    <label class="control-label col-sm-3">Last Name</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.LastName" name="lastname" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.lastname.$invalid">
+                            Employee's Last Name is required and has a max length of 150.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your family name."></i>
+                    </div>
+                </div>
+
+                <!-- EE's SSN -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.ssn.$invalid}">
+                    <label class="control-label col-sm-3">SSN</label>
+                    <div class="col-sm-5">
+                        <input type="text" disabled="disabled" required ng-maxlength="4" ng-model="vm.profile.SSN" name="ssn" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.ssn.$invalid">
+                            Employee's Last Four Digits of SSN is required
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your ssn."></i>
+                    </div>
+                </div>
+
+                <!-- EE's DOB -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.dob.$invalid}">
+                    <label class="control-label col-sm-3">Date of Birth</label>
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <input type="text" required ng-model="vm.profile.DateOfBirth" is-open="vm.opened" datepicker-popup="MM-dd-yyyy" name="dob" class="form-control" show-weeks="'false'">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="vm.open($event)"><i class="fa fa-calendar"></i></button>
+                            </span>
+                        </div>
+                        <p class="help-block" ng-show="userProfileForm.dob.$invalid">
+                            Employee's Date of Birth is required
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your date of birth."></i>
+                    </div>
+                </div>
+
+                <!-- EE's CompanyEmail -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.companyemail.$invalid}">
+                    <label class="control-label col-sm-3">Company Email</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="250" ng-model="vm.profile.CompanyEmail" name="companyemail" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.companyemail.$invalid">
+                            Employee's Company Email is required and must be less than 250 characters.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your company email."></i>
+                    </div>
+                </div>
+
+                <!-- EE's PreferredEmail -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.preferredemail.$invalid}">
+                    <label class="control-label col-sm-3">Preferred Email</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="250" ng-model="vm.profile.PreferredEmail" name="preferredemail" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.preferredemail.$invalid">
+                            Employee's Preferred Email is required and must be less than 250 characters.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your preferred email."></i>
+                    </div>
+                </div>
+
+                <!-- EE's FIELD -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.hipaa.$invalid}">
+                    <label class="control-label col-sm-3">Hipaa (Placeholder)</label>
+                    <div class="col-sm-5">
+                        <input type="checkbox" ng-model="vm.profile.HipaaAuthorizationGiven" name="hipaa" class="checkbox">
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="PLACEHOLDER FOR HIPAA AUTH."></i>
+                    </div>
+                </div>
+
+            </fieldset>
+            <!-- EE Address -->
+            <fieldset>
+                <legend>
+                    Address
+                </legend>
+
+                <!-- EE's Street -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.street.$invalid}">
+                    <label class="control-label col-sm-3">Street</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.Street" name="street" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.street.$invalid">
+                            Street is required and has a max length of 150.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your street address."></i>
+                    </div>
+                </div>
+
+                <!-- EE's Unit -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.unit.$invalid}">
+                    <label class="control-label col-sm-3">Unit</label>
+                    <div class="col-sm-5">
+                        <input type="text" ng-maxlength="150" ng-model="vm.profile.Unit" name="unit" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.unit.$invalid">
+                            Unit has a max length of 150.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your apartment number or building number."></i>
+                    </div>
+                </div>
+
+                <!-- EE's City -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.city.$invalid}">
+                    <label class="control-label col-sm-3">City</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.City" name="city" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.city.$invalid">
+                            City is required
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your City."></i>
+                    </div>
+                </div>
+
+                <!-- EE's Region -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.region.$invalid}">
+                    <label class="control-label col-sm-3">State</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.Region" name="region" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.region.$invalid">
+                            State is required.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your state."></i>
+                    </div>
+                </div>
+
+                <!-- EE's Postal -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.postal.$invalid}">
+                    <label class="control-label col-sm-3">Postal Code</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-model="vm.profile.Postal" name="postal" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.postal.$invalid">
+                            Postal Code is required.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your postal code."></i>
+                    </div>
+                </div>
+
+                <!-- EE's Country -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.country.$invalid}">
+                    <label class="control-label col-sm-3">Country</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.Country" name="country" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.country.$invalid">
+                            Country is required
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your Country."></i>
+                    </div>
+                </div>
+            </fieldset>
+            <!-- EE Phone -->
+            <fieldset>
+                <legend>Phone</legend>
+
+                <!-- EE's WorkPhone -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.workphone.$invalid}">
+                    <label class="control-label col-sm-3">Work</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.WorkPhone" name="workphone" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.workphone.$invalid">
+                            Employee's work phone number is required.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your work phone number."></i>
+                    </div>
+                </div>
+
+                <!-- EE's HomePhone -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.homephone.$invalid}">
+                    <label class="control-label col-sm-3">Home</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.HomePhone" name="homephone" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.homephone.$invalid">
+                            Employee's home phone number is required.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your home phone number."></i>
+                    </div>
+                </div>
+
+                <!-- EE's CellPhone -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.cellphone.$invalid}">
+                    <label class="control-label col-sm-3">Cell</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.CellPhone" name="cellphone" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.cellphone.$invalid">
+                            Employee's cell phone number is required.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your cell phone number."></i>
+                    </div>
+                </div>
+
+            </fieldset>
+
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Spouse/Domestic Partner Information</h4>
+        </div>
+        <div class="panel-body">
+            <fieldset>
+                <legend>Profile</legend>
+
+                <!-- SP's First Name -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.spfirstname.$invalid}">
+                    <label class="control-label col-sm-3">First Name</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.SpouseFirstName" name="spfirstname" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.spfirstname.$invalid">
+                            Spouse's First Name is required
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your spouses given name."></i>
+                    </div>
+                </div>
+
+                <!-- SP's Last Name -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.splastname.$invalid}">
+                    <label class="control-label col-sm-3">Last Name</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.SpouseLastName" name="splastname" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.splastname.$invalid">
+                            Spouse's First Name is required
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your spouses given name."></i>
+                    </div>
+                </div>
+
+                <!-- SP's DOB -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.spdob.$invalid}">
+                    <label class="control-label col-sm-3">Date of Birth</label>
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <input type="text" required ng-model="vm.profile.SpouseDateOfBirth" is-open="vm.openedsp" datepicker-popup="MM-dd-yyyy" name="spdob" class="form-control" show-weeks="'false'">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="vm.opensp($event)"><i class="fa fa-calendar"></i></button>
+                            </span>
+                        </div>
+                        <p class="help-block" ng-show="userProfileForm.spdob.$invalid">
+                            Spouses Date of Birth is required
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your Spouses date of birth."></i>
+                    </div>
+                </div>
+
+                <!-- SP's SSN -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.spssn.$invalid}">
+                    <label class="control-label col-sm-3">SSN</label>
+                    <div class="col-sm-5">
+                        <input type="text" required disabled="disabled" ng-maxlength="4" ng-model="vm.profile.SpouseSSN" name="spssn" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.spssn.$invalid">
+                            Spouses Last Four Digits of SSN is required
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your spouses ssn."></i>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Phone</legend>
+
+                <!-- SP's WorkPhone -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.spworkphone.$invalid}">
+                    <label class="control-label col-sm-3">Work</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.SpouseWorkPhone" name="spworkphone" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.spworkphone.$invalid">
+                            Spouses work phone number is required.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your spouses work phone number."></i>
+                    </div>
+                </div>
+
+                <!-- SP's HomePhone -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.sphomephone.$invalid}">
+                    <label class="control-label col-sm-3">Home</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.SpouseHomePhone" name="sphomephone" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.sphomephone.$invalid">
+                            Employee's home phone number is required.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your spouses home phone number."></i>
+                    </div>
+                </div>
+
+                <!-- SP's CellPhone -->
+                <div class="form-group" ng-class="{'has-error': userProfileForm.spcellphone.$invalid}">
+                    <label class="control-label col-sm-3">Cell</label>
+                    <div class="col-sm-5">
+                        <input type="text" required ng-maxlength="150" ng-model="vm.profile.SpouseCellPhone" name="spcellphone" class="form-control">
+                        <p class="help-block" ng-show="userProfileForm.spcellphone.$invalid">
+                            Spouses cell phone number is required.
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your spouses cell phone number."></i>
+                    </div>
+                </div>
+
+            </fieldset>
+            <div class="pull-right">
+                <button id="btnSearch" class="btn btn-primary" data-ng-click="vm.update(vm.profile)" type="submit" ng-disabled="vm.working || userProfileForm.$invalid">
+                    <span ng-show="vm.working">Updating <i class="fa fa-spinner fa-pulse"></i></span>
+                    <span ng-show="!vm.working">Update <i class="fa fa-arrow-right"></i></span>
+                </button>
+            </div>
+            <div id="statusAlert" data-ng-hide="vm.message == ''" data-ng-class="(vm.savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+                {{vm.message}}
+            </div>
+        </div>
+    </div>
+</form>
