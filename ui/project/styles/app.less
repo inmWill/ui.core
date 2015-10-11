@@ -10,6 +10,10 @@
  */
 @import 'inc/less-plugins/for';
 
+/*
+ * Load Font
+ */
+@import 'inc/font';
 
 /*
  * Variable and Mixin
@@ -22,13 +26,40 @@
 /*
  * Vendors
  */
+@import 'bower_components/weather-icons/weather-icons';
+@import 'bower_components/fileinput/fileinput';
 @import 'bower_components/material-shadows/material-shadows';
+@import 'bower_components/Waves/src/less/waves';
 
 
 /*
  * Load Website related LESS files
  */
 
-@import "layout/header";
+@import 'inc/generics';
+@import 'inc/bootstrap-overrides';
+@import 'layout/base';
+@import 'layout/header';
+@import 'layout/sidebar';
 @import 'content/profile';
+@import 'inc/misc';
+@import 'containers/card';
+@import 'inc/loading';
 
+
+/*
+ * Vendor Overrides
+ */
+@import 'inc/vendor-overrides/mediaelement';
+@import 'inc/vendor-overrides/fullcalendar';
+@import 'inc/vendor-overrides/bootstrap-chosen';
+@import 'inc/vendor-overrides/noUiSlider';
+@import 'inc/vendor-overrides/farbtastic';
+@import 'inc/vendor-overrides/summernote';
+@import 'inc/vendor-overrides/bootstrap-datetimepicker';
+@import 'inc/vendor-overrides/fileinput';
+@import 'inc/vendor-overrides/light-gallery';
+@import 'inc/vendor-overrides/waves';
+@import 'inc/vendor-overrides/ui-bootstrap';
+@import 'inc/vendor-overrides/ng-table';
+@import 'inc/vendor-overrides/sweetalert';

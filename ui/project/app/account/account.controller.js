@@ -11,7 +11,7 @@
         var vm = this;
         vm.account = {};
 
-        vm.title = 'Account';
+        vm.title = 'User Account';
         vm.currentUser = {
             UserId: 0,
             UserName: '',

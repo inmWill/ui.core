@@ -1,21 +1,60 @@
-<section id="account-view" class="mainbar">
-    <section class="matter">
-        <div class="container">           
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="widget wviolet">
-                        <div ht-widget-header title="Account"
-                             allow-collapse="true"></div>
-                        <div class="widget-content text-info">
-                            <h1>Account Dashboard</h1>
-                            
-                        </div>
-                        <div class="widget-foot">
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
+<div class="block-header">
+    <h2>{{vm.title}}</h2>
+
+    <ul class="actions">
+        <li class="dropdown" uib-dropdown>
+            <a href="" uib-dropdown-toggle>
+                <i class="zmdi zmdi-more-vert"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li>
+                    <a href="">Refresh</a>
+                </li>
+                <li>
+                    <a href="">Manage Widgets</a>
+                </li>
+                <li>
+                    <a href="">Widgets Settings</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+<div class="card">
+    <div class="card-header">
+        <h2>Mock User</h2>
+
+        <ul class="actions">
+            <li class="dropdown action-show" uib-dropdown>
+                <a href="" uib-dropdown-toggle>
+                    <i class="zmdi zmdi-more-vert"></i>
+                </a>
+
+                <div class="dropdown-menu pull-right">
+                    <p class="p-20">
+                        You can put anything here
+                    </p>
                 </div>
-            </div>
-        </div>
-    </section>
-</section>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card-body card-padding">
+        <p>UserId: {{vm.currentUser.UserId}}</p>
+        <p>UserName: {{vm.currentUser.UserName}}</p>
+        <p>FirstName: {{vm.currentUser.FirstName}}</p>
+        <p>LastName: {{vm.currentUser.LastName}}</p>
+        <p>Email: {{vm.currentUser.Email}}</p>
+        <p>IsAuthorized: {{vm.currentUser.IsAuthorized}}</p>
+        <p>
+            Roles:
+            <ul>
+                <li ng-repeat="role in vm.currentUser.Roles">
+                    {{role}}
+                </li>
+            </ul>
+        </p>
+    </div>
+</div>

@@ -1,17 +1,47 @@
-<section class="mainbar">
-    <section class="matter">
-        <div class="container">
-            <div class="row">
-                <div class="widget wviolet">
-                    <div ht-widget-header title="{{vm.title}}"></div>
-                    <div class="widget-content user">
-                        <h3>TODO: Implement Your Features</h3>
-                    </div>
-                    <div class="widget-foot">
-                        <div class="clearfix"></div>
-                    </div>
+<div class="block-header">
+    <h2>{{vm.title}}</h2>
+
+    <ul class="actions">
+        <li class="dropdown" uib-dropdown>
+            <a href="" uib-dropdown-toggle>
+                <i class="zmdi zmdi-more-vert"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li>
+                    <a href="">Refresh</a>
+                </li>
+                <li>
+                    <a href="">Manage Widgets</a>
+                </li>
+                <li>
+                    <a href="">Widgets Settings</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+<div class="card">
+    <div class="card-header">
+        <h2>Dashboard</h2>
+
+        <ul class="actions">
+            <li class="dropdown action-show" uib-dropdown>
+                <a href="" uib-dropdown-toggle>
+                    <i class="zmdi zmdi-more-vert"></i>
+                </a>
+
+                <div class="dropdown-menu pull-right">
+                    <p class="p-20">
+                        You can put anything here
+                    </p>
                 </div>
-            </div>
-        </div>
-    </section>
-</section>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card-body card-padding">
+        <p>Admin Dashboard will go here eventually.</p>
+    </div>
+</div>

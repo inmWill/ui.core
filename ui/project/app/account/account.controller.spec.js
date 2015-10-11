@@ -54,7 +54,7 @@ describe('AccountController', function() {
 
         describe('after activate', function() {
             it('should have title of "Account"', function() {
-                expect(controller.title).to.equal('Account');
+                expect(controller.title).to.equal('User Account');
             });
 
             it('should have logged "Activated"', function() {
