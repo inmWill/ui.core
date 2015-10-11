@@ -1,2 +1,2 @@
-# OCVNgUI
+# core UI
 Angular Client Framework 
