@@ -28,10 +28,6 @@ describe('blocks.exception', function() {
             expect(exceptionHandlerProvider.config).to.be.defined;
         }));
 
-        it('should have configuration', inject(function() {
-            expect(exceptionHandlerProvider.configure).to.be.defined;
-        }));
-
         describe('with appErrorPrefix', function() {
             beforeEach(function() {
                 exceptionHandlerProvider.configure(mocks.prefix);

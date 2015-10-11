@@ -25,6 +25,8 @@ module.exports = function() {
             './*.js'
         ],
         build: './build/',
+
+       // build: 'F://Projects/daedalus/deployments/ui_deploy/',
         client: client,
         css: temp + 'styles.css',
         fonts: bower.directory + 'font-awesome/fonts/**/*.*',
@@ -43,7 +45,8 @@ module.exports = function() {
             '**/*.module.js',
             '**/*.js'
         ],
-        less: './styles/styles.less',
+          less: './styles/styles.less',
+      //  less: './styles/app.less',
         report: report,
         root: root,
         server: server,

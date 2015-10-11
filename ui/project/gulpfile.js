@@ -390,7 +390,7 @@ function changeEvent(event) {
  */
 function clean(path, done) {
     log('Cleaning: ' + $.util.colors.blue(path));
-    del(path, done);
+    del(path, { force: true }, done);
 }
 
 /**
@@ -501,7 +501,7 @@ function startBrowserSync(isDev, specRunner) {
     }
 
     var options = {
-        proxy: 'localhost:' + port,
+        proxy: '127.0.0.1:' + port,
         port: 3000,
         files: isDev ? [
             config.client + '**/*.*',

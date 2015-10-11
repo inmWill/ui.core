@@ -66,6 +66,7 @@
     <script src="/app/blocks/exception/exception.module.js"></script>
     <script src="/app/blocks/logger/logger.module.js"></script>
     <script src="/app/blocks/router/router.module.js"></script>
+    <script src="/app/blocks/token/token.module.js"></script>
     <script src="/app/core/core.module.js"></script>
     <script src="/app/dashboard/dashboard.module.js"></script>
     <script src="/app/layout/layout.module.js"></script>
@@ -73,12 +74,14 @@
     <script src="/app/widgets/widgets.module.js"></script>
     <script src="/app/account/account.controller.js"></script>
     <script src="/app/account/account.route.js"></script>
+    <script src="/app/account/account.service.js"></script>
     <script src="/app/admin/admin.controller.js"></script>
     <script src="/app/admin/admin.route.js"></script>
     <script src="/app/blocks/exception/exception-handler.provider.js"></script>
     <script src="/app/blocks/exception/exception.js"></script>
     <script src="/app/blocks/logger/logger.js"></script>
     <script src="/app/blocks/router/router-helper.provider.js"></script>
+    <script src="/app/blocks/token/token.interceptor.js"></script>
     <script src="/app/core/config.js"></script>
     <script src="/app/core/constants.js"></script>
     <script src="/app/core/core.route.js"></script>
@@ -101,15 +104,29 @@
     <!-- endinject -->
 
     <!-- inject:specs:js -->
+
+    <script src="/app/account/account.controller.spec.js"></script>
+
     <script src="/app/admin/admin.controller.spec.js"></script>
+
     <script src="/app/admin/admin.route.spec.js"></script>
+
     <script src="/app/blocks/exception/exception-handler.provider.spec.js"></script>
+
     <script src="/app/core/core.route.spec.js"></script>
+
     <script src="/app/dashboard/dashboard.controller.spec.js"></script>
+
     <script src="/app/dashboard/dashboard.route.spec.js"></script>
+
     <script src="/app/layout/ht-sidebar.directive.spec.js"></script>
+
     <script src="/app/layout/shell.controller.spec.js"></script>
+
     <script src="/app/layout/sidebar.controller.spec.js"></script>
+
+    <script src="/app/people/people.controller.spec.js"></script>
+
     <!-- endinject -->
 
     <!-- inject:templates:js -->

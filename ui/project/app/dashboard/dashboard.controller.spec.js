@@ -38,7 +38,7 @@ describe('DashboardController', function() {
                 expect(controller.people).to.have.length.above(0);
             });
 
-            it('should have people count of 5', function () {
+            it('should have people count of 7', function () {
                 expect(controller.people).to.have.length(7);
             });
         });

@@ -9,10 +9,20 @@
     /* @ngInject */
     function PeopleController($q, $state, dataservice, logger) {
         var vm = this;
+        vm.title = 'People';
         vm.people = [];
         vm.gotoPerson = gotoPerson;
 
-        getPeople();
+    //    getPeople();
+
+        activate();
+
+        function activate() {
+            var promises = [getPeople()];
+            return $q.all(promises).then(function () {
+                logger.info('Activated People View');
+            });
+        }
 
         function getPeople() {
             dataservice.getPeople()
