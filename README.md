@@ -5,7 +5,7 @@ Deployment Process for UI
 
 make sure serviceURIBase is pointing to azure in constants.js
 
-Clear deployment directory (F:\Projects\daedalus\deployments\ui_deploy) of everything except .git 
+Clear deployment directory (F:\Projects\daedalus\deployments\ui_deploy) of everything except .git and web.config
 
 Switch build path in gulp.config.js
 line 27 and 28 switch comments. so build deploy path is active

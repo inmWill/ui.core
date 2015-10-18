@@ -7,7 +7,10 @@
         .constant('toastr', toastr)
         .constant('moment', moment)
         .constant('APP_CONFIG', {
-           // serviceURIBase: 'http://localhost:51517/'
-                serviceURIBase: 'http://apicore.azurewebsites.net/'
+            clientId: 'coreApp',
+            serviceURIBase: 'http://localhost:51517/',
+    //      serviceURIBase: 'http://apicore.azurewebsites.net/',
+            isRegistered: true
+ 
         });
 })();

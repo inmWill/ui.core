@@ -31,10 +31,10 @@
     <!-- endinject -->
     <!-- endbuild -->
 </head>
-<body class="sw-toggled">
+<body>
     <div>
         <div ng-include="'app/layout/shell.html'"></div>
-        <div id="splash-page" ng-show="showSplash">
+        <!--<div id="splash-page" ng-show="showSplash">
             <div class="page-splash">
                 <div class="page-splash-message">
                     ui.core
@@ -43,7 +43,7 @@
                     <div class="bar"></div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 
     <!-- build:js js/lib.js -->
@@ -52,6 +52,7 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/toastr/toastr.js"></script>
@@ -60,6 +61,7 @@
     <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/waves/dist/waves.min.js"></script>
+    <script src="bower_components/satellizer/satellizer.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -72,13 +74,13 @@
 
     <script src="/app/admin/admin.module.js"></script>
 
+    <script src="/app/auth/auth.module.js"></script>
+
     <script src="/app/blocks/exception/exception.module.js"></script>
 
     <script src="/app/blocks/logger/logger.module.js"></script>
 
     <script src="/app/blocks/router/router.module.js"></script>
-
-    <script src="/app/blocks/token/token.module.js"></script>
 
     <script src="/app/core/core.module.js"></script>
 
@@ -100,6 +102,16 @@
 
     <script src="/app/admin/admin.route.js"></script>
 
+    <script src="/app/auth/auth.config.js"></script>
+
+    <script src="/app/auth/auth.controller.js"></script>
+
+    <script src="/app/auth/auth.directive.js"></script>
+
+    <script src="/app/auth/auth.route.js"></script>
+
+    <script src="/app/auth/auth.service.js"></script>
+
     <script src="/app/blocks/exception/exception-handler.provider.js"></script>
 
     <script src="/app/blocks/exception/exception.js"></script>
@@ -107,8 +119,6 @@
     <script src="/app/blocks/logger/logger.js"></script>
 
     <script src="/app/blocks/router/router-helper.provider.js"></script>
-
-    <script src="/app/blocks/token/token.interceptor.js"></script>
 
     <script src="/app/core/config.js"></script>
 

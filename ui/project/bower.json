@@ -21,6 +21,7 @@
     "angular": "~1.4.7",
     "angular-sanitize": "~1.4.7",
     "angular-resource": "~1.4.7",
+    "angular-local-storage": "~0.2.3",
     "bootstrap": "~3.3.5",
     "font-awesome": "~4.3.0",
     "moment": "~2.10.3",
@@ -33,7 +34,8 @@
     "angular-loading-bar": "~0.8.0",
     "material-shadows": "~2.0.2",
     "angular-bootstrap": "~0.14.0",
-    "waves": "~0.7.2"
+    "waves": "~0.7.2",
+    "satellizer": "~0.12.5"
   },
   "overrides": {
     "bootstrap": {

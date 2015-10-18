@@ -26,7 +26,7 @@
                 return response.data;
             }
             function fail(e) {
-                return exception.catcher('XHR Failed for getToken')(e);
+                return exception.catcher('XHR Failed for getCurrentUser')(e);
             }
         }
     }
