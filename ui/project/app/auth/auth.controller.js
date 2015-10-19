@@ -16,10 +16,10 @@
             password: ''
         };
 
-        vm.currentUser = {};
+        vm.currentUser = null;
         vm.title = 'auth';
         vm.result = '';
-        getCurrentUser();
+
         vm.login = function () {
             authService.login(vm.credentials)
                 .then(function (token) {
@@ -31,28 +31,20 @@
                 });
         };
 
+        vm.logout = function () {
+            authService.logout();
+            vm.currentUser = {};
+            vm.result = 'Logout Successful!';
+        };
+
         function getCurrentUser() {
             vm.currentUser = authService.currentUser();
         }
 
-        //vm.login = function () {
-
-        //    var credentials = {
-        //        username: vm.username,
-        //        password: vm.password
-        //    };
-
-        //    // Use Satellizer's $auth service to login
-        //    authService.login(credentials).then(function (data) {
-
-        //        // If login is successful, redirect to the users state
-        //        vm.result = "Login Successful!";
-        //        //$state.go('account', {});
-        //    });
-        //};
-
         activate();
 
-        function activate() { }
+        function activate() {
+            getCurrentUser();
+        }
     }
 })();

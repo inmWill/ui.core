@@ -11,7 +11,7 @@
         var baseUrl = APP_CONFIG.serviceURIBase;
         var isRegistered = APP_CONFIG.isRegistered;
 
-        var user = null;
+        var user = {};
 
         function readStoredUser() {
             //Try to read in from localStorage if one exists
@@ -35,7 +35,7 @@
 
         var service = {
             login: login,
-            logOut: logOut,
+            logout: logout,
             currentUser: currentUser
         };
         return service;
@@ -54,20 +54,16 @@
             $http.post(baseUrl + 'token', data, {
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
             }).success(function (response) {
-                     localStorageService
-                         .set('authorizationData', {
-                             token: response.access_token,
-                             refreshToken: response.refresh_token,
-                             username: credentials.username,
-                             roles: response.userRoles,
-                             authorized: true
-                         });
-                     currentUser.authorized = true;
-                     currentUser.username = credentials.username;
-                     currentUser.role = response.userRoles;
-                     deferred.resolve(response);
+                user.authorized = true;
+                user.username = credentials.username;
+                user.role = response.userRoles;
+                user.token = response.access_token;
+                user.refreshToken = response.refresh_token;
+                localStorageService
+                    .set('authorizationData', user);
+                deferred.resolve(response);
             }).error(function (err) {
-                logOut();
+                logout();
                 deferred.reject(err);
             });
 
@@ -75,12 +71,13 @@
 
         }
 
-        function logOut() {
+        function logout() {
 
             localStorageService.remove('authorizationData');
             //authSession.clearUserData();
             currentUser.authorized = false;
             currentUser.username = '';
+            return true;
         }
     }
 })();

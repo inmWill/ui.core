@@ -34,7 +34,8 @@ var mockData = (function () {
             username: 'Admin',
             roles: 'Admin',
             firstname: 'Ellen',
-            lastname: 'Ripley'
+            lastname: 'Ripley',
+            authorized: true
         }
         return mockToken;
     }

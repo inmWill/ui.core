@@ -4,6 +4,9 @@
             <h3>Login</h3>
         </div>
         <div class="panel-body">
+            <div  ng-show="vm.currentUser.username != null" class="alert alert-info">
+                <p>User: {{vm.currentUser.username}}</p>
+            </div>
             <form>
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Username" ng-model="vm.credentials.username">

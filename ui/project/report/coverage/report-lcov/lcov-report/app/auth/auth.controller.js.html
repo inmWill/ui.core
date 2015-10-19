@@ -15,10 +15,10 @@
 <div class="header high">
     <h1>Code coverage report for <span class="entity">./app/auth/auth.controller.js</span></h1>
     <h2>
-        Statements: <span class="metric">92.86% <small>(13 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">95% <small>(19 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">83.33% <small>(5 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">92.86% <small>(13 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">85.71% <small>(6 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">95% <small>(19 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/auth/</a> &#187; auth.controller.js</div>
@@ -69,15 +69,7 @@
 42
 43
 44
-45
-46
-47
-48
-49
-50
-51
-52
-53</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+45</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -88,19 +80,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">7</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5</span>
-<span class="cline-any cline-yes">5</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -108,25 +102,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">15</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">7</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿(function () {
@@ -147,12 +131,14 @@
             password: ''
         };
 &nbsp;
+        vm.currentUser = {};
         vm.title = 'auth';
         vm.result = '';
-&nbsp;
+        getCurrentUser();
         vm.login = function () {
             authService.login(vm.credentials)
                 .then(function (token) {
+                    getCurrentUser();
                     vm.result = 'Login Successful!';
                 })
                 .catch(<span class="fstat-no" title="function not covered" >function (error) {</span>
@@ -160,25 +146,15 @@
                 });
         };
 &nbsp;
-        //vm.login = function () {
-&nbsp;
-        //    var credentials = {
-        //        username: vm.username,
-        //        password: vm.password
-        //    };
-&nbsp;
-        //    // Use Satellizer's $auth service to login
-        //    authService.login(credentials).then(function (data) {
-&nbsp;
-        //        // If login is successful, redirect to the users state
-        //        vm.result = "Login Successful!";
-        //        //$state.go('account', {});
-        //    });
-        //};
+        function getCurrentUser() {
+            vm.currentUser = authService.currentUser();
+        }
 &nbsp;
         activate();
 &nbsp;
-        function activate() { }
+        function activate() {
+            getCurrentUser();
+        }
     }
 })();
 &nbsp;</pre></td></tr>
@@ -186,7 +162,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Oct 17 2015 20:46:18 GMT-0600 (Mountain Daylight Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Oct 18 2015 17:59:45 GMT-0600 (Mountain Daylight Time)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

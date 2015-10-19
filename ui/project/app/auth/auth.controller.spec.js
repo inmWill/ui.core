@@ -3,6 +3,7 @@ describe('AuthController', function () {
     var controller;
     var token = mockData.getMockToken();
 
+
     beforeEach(function () {
         bard.appModule('app.auth');
         bard.inject('$controller', '$log', '$q', '$rootScope', 'authService', 'localStorageService');
@@ -10,7 +11,8 @@ describe('AuthController', function () {
 
     beforeEach(function () {
         sinon.stub(authService, 'login').returns($q.when(true));
-    //    sinon.stub(authService, 'currentUser').returns($q.when(token))
+        sinon.stub(authService, 'logout').returns(true);
+        sinon.stub(authService, 'currentUser').returns(token);
         controller = $controller('AuthController');
         $rootScope.$apply();
     });
@@ -38,7 +40,6 @@ describe('AuthController', function () {
 
         describe('after successful login to core.api', function () {
 
-            // currently broken on the api
             it('should display a success message', function () {
                 controller.credentials.username = 'test';
                 controller.credentials.password = 'password';
@@ -56,6 +57,26 @@ describe('AuthController', function () {
                 expect(controller.currentUser.username).to.equal('Admin');
                 expect(controller.currentUser.roles).to.have.length.above(0);
             });
+
+        });
+
+
+        describe('after successful logout', function () {
+
+            beforeEach(function () {
+                controller.logout();
+                $rootScope.$apply();
+            });
+
+            it('should display a success message', function () {
+
+                expect(controller.result).to.equal('Logout Successful!');
+            });
+            it('should not have a saved user', function () {
+
+                expect(controller.currentUser.username).to.not.be.defined;
+            });
+
 
         });
     });
