@@ -8,7 +8,8 @@
         'app.dashboard',
         'app.layout',
         'app.people',
-        'app.account'
+        'app.account',
+        'app.auth'
     ]);
 
 })();

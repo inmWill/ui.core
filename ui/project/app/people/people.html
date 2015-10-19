@@ -1,35 +1,64 @@
-<section id="people-view" class="mainbar">
-    <section class="matter">
-        <div class="container">           
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="widget wviolet">
-                        <div ht-widget-header title="People"
-                             allow-collapse="true"></div>
-                        <div class="widget-content text-center text-info">
-                            <table class="table table-condensed table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <tr ng-repeat="p in vm.people" ng-click="vm.gotoPerson(p)">
-                                    <td>{{p.Id}}</td>
-                                    <td>{{p.FirstName}}</td>
-                                    <td>{{p.LastName}}</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="widget-foot">
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
+<div class="block-header">
+    <h2>{{vm.title}}</h2>
+
+    <ul class="actions">
+        <li class="dropdown" uib-dropdown>
+            <a href="" uib-dropdown-toggle>
+                <i class="zmdi zmdi-more-vert"></i>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li>
+                    <a href="">Refresh</a>
+                </li>
+                <li>
+                    <a href="">Manage Widgets</a>
+                </li>
+                <li>
+                    <a href="">Widgets Settings</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+<div class="card">
+    <div class="card-header">
+        <h2>Mock People</h2>
+
+        <ul class="actions">
+            <li class="dropdown action-show" uib-dropdown>
+                <a href="" uib-dropdown-toggle>
+                    <i class="zmdi zmdi-more-vert"></i>
+                </a>
+
+                <div class="dropdown-menu pull-right">
+                    <p class="p-20">
+                        You can put anything here
+                    </p>
                 </div>
-            </div>
-        </div>
-    </section>
-</section>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card-body card-padding">
+        <table class="table table-condensed table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>DOB</th>
+                    <th>Last 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="p in vm.people">
+                    <td>{{p.FirstName}}</td>
+                    <td>{{p.LastName}}</td>
+                    <td>{{p.DateOfBirth | date: 'short'}}</td>
+                    <td>{{p.LastSSN}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -72,6 +72,15 @@
     <Content Include="app\account\account.controller.js" />
     <Content Include="app\account\account.route.js" />
     <Content Include="app\account\account.html" />
+    <Content Include="app\auth\auth.route.js" />
+    <Content Include="app\auth\auth.route.spec.js" />
+    <Content Include="app\auth\auth.config.js" />
+    <Content Include="app\auth\auth.controller.js" />
+    <Content Include="app\auth\auth.directive.js" />
+    <Content Include="app\auth\auth.module.js" />
+    <Content Include="app\auth\auth.controller.spec.js" />
+    <Content Include="app\auth\auth.service.js" />
+    <Content Include="app\auth\login.html" />
     <Content Include="app\blocks\exception\exception-handler.provider.js" />
     <Content Include="app\blocks\exception\exception-handler.provider.spec.js" />
     <Content Include="app\blocks\exception\exception.js" />
@@ -81,8 +90,6 @@
     <Content Include="app\blocks\router\router-helper.provider.js" />
     <Content Include="app\blocks\router\router.module.js" />
     <Content Include="app\app.module.js" />
-    <Content Include="app\blocks\token\token.interceptor.js" />
-    <Content Include="app\blocks\token\token.module.js" />
     <Content Include="app\core\404.html" />
     <Content Include="app\core\config.js" />
     <Content Include="app\core\constants.js" />
@@ -127,6 +134,13 @@
     <Content Include="bower_components\angular-loading-bar\index.js" />
     <Content Include="bower_components\angular-loading-bar\src\loading-bar.css" />
     <Content Include="bower_components\angular-loading-bar\src\loading-bar.js" />
+    <Content Include="bower_components\angular-local-storage\.gitattributes" />
+    <Content Include="bower_components\angular-local-storage\.gitignore" />
+    <Content Include="bower_components\angular-local-storage\demo\demo-app.js" />
+    <Content Include="bower_components\angular-local-storage\demo\demo-style.css" />
+    <Content Include="bower_components\angular-local-storage\demo\demo.html" />
+    <Content Include="bower_components\angular-local-storage\dist\angular-local-storage.js" />
+    <Content Include="bower_components\angular-local-storage\dist\angular-local-storage.min.js" />
     <Content Include="bower_components\angular-mocks\angular-mocks.js" />
     <Content Include="bower_components\angular-mocks\ngAnimateMock.js" />
     <Content Include="bower_components\angular-mocks\ngMock.js" />
@@ -2303,11 +2317,17 @@
     <Content Include="bower_components\moment\templates\globals.js" />
     <Content Include="bower_components\moment\templates\locale-header.js" />
     <Content Include="bower_components\moment\templates\test-header.js" />
+    <Content Include="bower_components\satellizer\satellizer.js" />
+    <Content Include="bower_components\satellizer\satellizer.min.js" />
     <Content Include="bower_components\sinon\index.js" />
     <Content Include="bower_components\toastr\toastr.css" />
     <Content Include="bower_components\toastr\toastr.js" />
     <Content Include="bower_components\toastr\toastr.min.css" />
     <Content Include="bower_components\toastr\toastr.min.js" />
+    <Content Include="bower_components\waves\waves.css" />
+    <Content Include="bower_components\waves\waves.js" />
+    <Content Include="bower_components\waves\waves.min.css" />
+    <Content Include="bower_components\waves\waves.min.js" />
     <Content Include="build\fonts\fontawesome-webfont.svg" />
     <Content Include="build\images\AngularJS-small.png" />
     <Content Include="build\images\busy.gif" />
@@ -2319,6 +2339,15 @@
     <Content Include="build\images\Logos\consovalogo-sm.png" />
     <Content Include="build\images\Logos\consovalogo.png" />
     <Content Include="build\index.html" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="fonts\roboto\Roboto-Bold-webfont.svg" />
+    <Content Include="fonts\roboto\Roboto-Light-webfont.svg" />
+    <Content Include="fonts\roboto\Roboto-Medium-webfont.svg" />
+    <Content Include="fonts\roboto\Roboto-Regular-webfont.svg" />
+    <Content Include="fonts\roboto\Roboto-Thin-webfont.svg" />
+    <Content Include="fonts\weather-icons\weather-icons.svg" />
     <Content Include="gulp.config.js" />
     <Content Include="gulpfile.js" />
     <Content Include="images\AngularJS-small.png" />
@@ -2330,6 +2359,17 @@
     <Content Include="images\Logos\BertelsmannLogo.png" />
     <Content Include="images\Logos\consovalogo-sm.png" />
     <Content Include="images\Logos\consovalogo.png" />
+    <Content Include="images\Mocks\profile\1.jpg" />
+    <Content Include="images\Mocks\profile\2.jpg" />
+    <Content Include="images\Mocks\profile\3.jpg" />
+    <Content Include="images\Mocks\profile\4.jpg" />
+    <Content Include="images\Mocks\profile\5.jpg" />
+    <Content Include="images\Mocks\profile\6.jpg" />
+    <Content Include="images\Mocks\profile\7.jpg" />
+    <Content Include="images\Mocks\profile\8.jpg" />
+    <Content Include="images\Mocks\profile\9.jpg" />
+    <Content Include="images\Mocks\profile\profile-pic-2.jpg" />
+    <Content Include="images\Mocks\profile\profile-pic.jpg" />
     <Content Include="karma.conf.js" />
     <Content Include="node_modules\chai\chai.js" />
     <Content Include="node_modules\chai\index.js" />
@@ -4470,6 +4510,51 @@
     <Content Include="bower_components\material-shadows\material-shadows.scss" />
     <Content Include="bower_components\material-shadows\material-shadows.styl" />
     <Content Include="bower_components\material-shadows\README.md" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\roboto\Roboto-Bold-webfont.eot" />
+    <Content Include="fonts\roboto\Roboto-Bold-webfont.ttf" />
+    <Content Include="fonts\roboto\Roboto-Bold-webfont.woff" />
+    <Content Include="fonts\roboto\Roboto-Light-webfont.eot" />
+    <Content Include="fonts\roboto\Roboto-Light-webfont.ttf" />
+    <Content Include="fonts\roboto\Roboto-Light-webfont.woff" />
+    <Content Include="fonts\roboto\Roboto-Medium-webfont.eot" />
+    <Content Include="fonts\roboto\Roboto-Medium-webfont.ttf" />
+    <Content Include="fonts\roboto\Roboto-Medium-webfont.woff" />
+    <Content Include="fonts\roboto\Roboto-Regular-webfont.eot" />
+    <Content Include="fonts\roboto\Roboto-Regular-webfont.ttf" />
+    <Content Include="fonts\roboto\Roboto-Regular-webfont.woff" />
+    <Content Include="fonts\roboto\Roboto-Thin-webfont.eot" />
+    <Content Include="fonts\roboto\Roboto-Thin-webfont.ttf" />
+    <Content Include="fonts\roboto\Roboto-Thin-webfont.woff" />
+    <Content Include="fonts\weather-icons\weather-icons.eot" />
+    <Content Include="fonts\weather-icons\weather-icons.ttf" />
+    <Content Include="fonts\weather-icons\weather-icons.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="bower_components\waves\waves.min.js.map" />
+    <Content Include="bower_components\angular-local-storage\.bower.json" />
+    <Content Include="bower_components\angular-local-storage\.bowerrc" />
+    <Content Include="bower_components\angular-local-storage\.travis.yml" />
+    <Content Include="bower_components\angular-local-storage\bower.json" />
+    <Content Include="bower_components\angular-local-storage\CHANGELOG.md" />
+    <Content Include="bower_components\angular-local-storage\LICENSE" />
+    <Content Include="bower_components\angular-local-storage\package.json" />
+    <Content Include="bower_components\angular-local-storage\README.md" />
+    <Content Include="bower_components\satellizer\.bower.json" />
+    <Content Include="bower_components\satellizer\.npmignore" />
+    <Content Include="bower_components\satellizer\bower.json" />
+    <Content Include="bower_components\satellizer\LICENSE" />
+    <Content Include="bower_components\satellizer\README.md" />
     <None Include="Properties\PublishProfiles\OCVNgUI_Sandcastle_Development.pubxml" />
     <Content Include="server\app.js" />
     <Content Include="server\data.js" />
@@ -4484,6 +4569,26 @@
     <Content Include="styles\inc\less-plugins\for.less" />
     <Content Include="styles\content\profile.less" />
     <Content Include="styles\inc\font.less" />
+    <Content Include="styles\layout\base.less" />
+    <Content Include="styles\inc\generics.less" />
+    <Content Include="styles\inc\bootstrap-overrides.less" />
+    <Content Include="styles\layout\sidebar.less" />
+    <Content Include="styles\inc\vendor-overrides\bootstrap-chosen.less" />
+    <Content Include="styles\inc\vendor-overrides\bootstrap-datetimepicker.less" />
+    <Content Include="styles\inc\vendor-overrides\farbtastic.less" />
+    <Content Include="styles\inc\vendor-overrides\fileinput.less" />
+    <Content Include="styles\inc\vendor-overrides\fullcalendar.less" />
+    <Content Include="styles\inc\vendor-overrides\light-gallery.less" />
+    <Content Include="styles\inc\vendor-overrides\mediaelement.less" />
+    <Content Include="styles\inc\vendor-overrides\ng-table.less" />
+    <Content Include="styles\inc\vendor-overrides\noUiSlider.less" />
+    <Content Include="styles\inc\vendor-overrides\summernote.less" />
+    <Content Include="styles\inc\vendor-overrides\sweetalert.less" />
+    <Content Include="styles\inc\vendor-overrides\ui-bootstrap.less" />
+    <Content Include="styles\inc\vendor-overrides\waves.less" />
+    <Content Include="styles\inc\misc.less" />
+    <Content Include="styles\containers\card.less" />
+    <Content Include="styles\inc\loading.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -4494,7 +4599,7 @@
   <ItemGroup>
     <Content Include="Index.html" />
     <Content Include="specs.html" />
-    <Content Include="test-helpers\bind-polyfill.js" />
+    <Content Include="polyfill\bind-polyfill.js" />
     <Content Include="test-helpers\mock-data.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -4515,6 +4620,9 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Specs|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -4527,7 +4635,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55792</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55792/</IISUrl>
+          <IISUrl>http://localhost:10101/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

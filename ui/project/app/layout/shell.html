@@ -1,19 +1,25 @@
 <div ng-controller="ShellController as vm">
-    <header class="clearfix">
-        <ht-top-nav navline="vm.navline"></ht-top-nav>
-    </header>
-    <section id="content" class="content">
-        <div ng-include="'app/layout/sidebar.html'"></div>
+    <header id="header">
+        <ul class="header-inner">
+            <li id="menu-trigger"
+                ng-click="vm.sidebarToggle = !vm.sidebarToggle"
+                ng-class="{ 'open': vm.sidebarToggle === true }">
+                <div class="line-wrap">
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
+            </li>
+            <ht-top-nav navline="vm.navline"></ht-top-nav>
+        </ul>
+</header>
 
-        <div ui-view class="shuffle-animation"></div>
-
-        <div ngplus-overlay
-             ngplus-overlay-delay-in="50"
-             ngplus-overlay-delay-out="700"
-             ngplus-overlay-animation="dissolve-animation">
-            <img src="images/busy.gif"/>
-
-            <div class="page-spinner-message overlay-message">{{vm.busyMessage}}</div>
-        </div>
+    <section id="main">
+        <aside id="sidebar"  ng-class="{ 'toggled': vm.sidebarToggle === true }" ng-include="'app/layout/sidebar.html'"></aside>
+        <section id="content">
+            <div class="container">
+                <div ui-view></div>
+            </div>
+        </section>
     </section>
 </div>

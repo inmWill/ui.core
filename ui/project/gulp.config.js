@@ -25,11 +25,12 @@ module.exports = function() {
             './*.js'
         ],
         build: './build/',
-
-       // build: 'F://Projects/daedalus/deployments/ui_deploy/',
+    //    build: 'F://Projects/daedalus/deployments/ui_deploy/',
         client: client,
-        css: temp + 'styles.css',
-        fonts: bower.directory + 'font-awesome/fonts/**/*.*',
+        //css: temp + 'styles.css', default hottowel
+        css: temp + 'app.css',
+        fonts: './fonts/**/*.*',
+        //fonts: bower.directory + 'font-awesome/fonts/**/*.*', default hottowel
         html: client + '**/*.html',
         htmltemplates: clientApp + '**/*.html',
         images: './images/**/*.*',
@@ -45,8 +46,8 @@ module.exports = function() {
             '**/*.module.js',
             '**/*.js'
         ],
-          less: './styles/styles.less',
-      //  less: './styles/app.less',
+      //    less: './styles/styles.less', default hottowel
+        less: './styles/app.less',  // material ui 
         report: report,
         root: root,
         server: server,
@@ -117,6 +118,7 @@ module.exports = function() {
             nodeModules + '/chai/chai.js',
             nodeModules + '/sinon-chai/lib/sinon-chai.js'
         ],
+        polyFill: ['./polyfill/*.js'],
         specHelpers: ['./test-helpers/*.js'],
         specs: [clientApp + '**/*.spec.js'],
         serverIntegrationSpecs: [client + '/tests/server-integration/**/*.spec.js'],
@@ -152,6 +154,7 @@ module.exports = function() {
     function getKarmaOptions() {
         var options = {
             files: [].concat(
+                config.polyFill,
                 bowerFiles,
                 config.specHelpers,
                 clientApp + '**/*.module.js',

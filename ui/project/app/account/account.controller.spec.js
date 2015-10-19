@@ -23,38 +23,38 @@ describe('AccountController', function() {
 
         describe('user account properties', function () {
             it('should have a valid userid', function () {
-                expect(controller.currentUser.UserId).to.be.above(0);
+                expect(controller.currentUser.userid).to.be.above(0);
             });
 
             it('should have a username', function () {
-                expect(controller.currentUser.UserName).to.not.be.empty;
+                expect(controller.currentUser.username).to.not.be.empty;
             });
 
             it('should have a firstname', function () {
-                expect(controller.currentUser.FirstName).to.not.be.empty;
+                expect(controller.currentUser.firstname).to.not.be.empty;
             });
 
             it('should have a lastname', function () {
-                expect(controller.currentUser.LastName).to.not.be.empty;
+                expect(controller.currentUser.lastname).to.not.be.empty;
             });
 
             it('should have a email', function () {
-                expect(controller.currentUser.Email).to.not.be.empty;
+                expect(controller.currentUser.email).to.not.be.empty;
             });
 
             it('should have a isAuthorized', function () {
-                expect(controller.currentUser.IsAuthorized).to.exist;
+                expect(controller.currentUser.authorized).to.exist;
             });
 
             it('should have at least one role', function () {
-                expect(controller.currentUser.Roles).to.have.length.above(0);
+                expect(controller.currentUser.roles).to.have.length.above(0);
             });
 
         });
 
         describe('after activate', function() {
             it('should have title of "Account"', function() {
-                expect(controller.title).to.equal('Account');
+                expect(controller.title).to.equal('User Account');
             });
 
             it('should have logged "Activated"', function() {
@@ -65,9 +65,6 @@ describe('AccountController', function() {
                 expect(controller.currentUser).to.exist;
             });
 
-            it('should have a mock user', function () {
-                expect(controller.currentUser.FirstName).to.equal('Ellen');
-            });
 
             //it()
 

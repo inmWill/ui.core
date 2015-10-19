@@ -1,71 +1,64 @@
-<section id="dashboard-view" class="mainbar">
-    <section class="matter">
-        <div class="container">
-            <!--<div class="row">
-                <div class="col-md-12">
-                    <ul class="today-datas">
-                        <li class="blightblue">
-                            <div class="pull-left"><i class="fa fa-plane"></i></div>
-                            <div class="datas-text pull-right">
-                                <span class="bold">May 18 - 19, 2015</span> Castle Resort, Neverland
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
+<div class="block-header">
+    <h2>{{vm.title}}</h2>
 
-                        <li class="borange">
-                            <div class="pull-left"><i class="fa fa-envelope"></i></div>
-                            <div class="datas-text pull-right">
-                                <span class="bold">{{vm.messageCount}}</span> Messages
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
+    <ul class="actions">
+        <li class="dropdown" uib-dropdown>
+            <a href="" uib-dropdown-toggle>
+                <i class="zmdi zmdi-more-vert"></i>
+            </a>
 
-                    </ul>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li>
+                    <a href="">Refresh</a>
+                </li>
+                <li>
+                    <a href="">Manage Widgets</a>
+                </li>
+                <li>
+                    <a href="">Widgets Settings</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+<div class="card">
+    <div class="card-header">
+        <h2>Mock People</h2>
+
+        <ul class="actions">
+            <li class="dropdown action-show" uib-dropdown>
+                <a href="" uib-dropdown-toggle>
+                    <i class="zmdi zmdi-more-vert"></i>
+                </a>
+
+                <div class="dropdown-menu pull-right">
+                    <p class="p-20">
+                        You can put anything here
+                    </p>
                 </div>
-            </div>-->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="widget wviolet">
-                        <div ht-widget-header title="People"
-                             allow-collapse="true"></div>
-                        <div class="widget-content text-center text-info">
-                            <table class="table table-condensed table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Age</th>
-                                        <th>Location</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr ng-repeat="p in vm.people">
-                                        <td>{{p.FirstName}}</td>
-                                        <td>{{p.LastName}}</td>
-                                        <!--<td>{{p.age}}</td>
-                                        <td>{{p.location}}</td>-->
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="widget-foot">
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="widget wgreen">
-                        <div ht-widget-header title="{{vm.news.title}}"
-                             allow-collapse="true"></div>
-                        <div class="widget-content text-center text-info">
-                            <small>{{vm.news.description}}</small>
-                        </div>
-                        <div class="widget-foot">
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</section>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card-body card-padding">
+        <table class="table table-condensed table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>DOB</th>
+                    <th>Last 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="p in vm.people">
+                    <td>{{p.FirstName}}</td>
+                    <td>{{p.LastName}}</td>
+                    <td>{{p.DateOfBirth | date: 'short'}}</td>
+                    <td>{{p.LastSSN}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
