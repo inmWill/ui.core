@@ -19,7 +19,7 @@
 
 
         function getCurrentUser() {
-            return $http.get(serviceBase + 'api/Account/GetCurrentUser')
+            return $http.get(serviceBase + 'api/Account/GetActiveUserAccount')
                 .then(success)
                 .catch(fail);
             function success(response) {

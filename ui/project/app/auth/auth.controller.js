@@ -18,7 +18,7 @@
 
         vm.currentUser = null;
         vm.title = 'auth';
-        vm.result = '';
+        vm.result = 'Please Login';
 
         vm.login = function () {
             authService.login(vm.credentials)

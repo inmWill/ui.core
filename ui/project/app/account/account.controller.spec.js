@@ -22,32 +22,32 @@ describe('AccountController', function() {
         });
 
         describe('user account properties', function () {
-            it('should have a valid userid', function () {
-                expect(controller.currentUser.userid).to.be.above(0);
-            });
-
             it('should have a username', function () {
-                expect(controller.currentUser.username).to.not.be.empty;
+                expect(controller.currentUser.Username).to.not.be.empty;
             });
 
             it('should have a firstname', function () {
-                expect(controller.currentUser.firstname).to.not.be.empty;
+                expect(controller.currentUser.Firstname).to.not.be.empty;
             });
 
             it('should have a lastname', function () {
-                expect(controller.currentUser.lastname).to.not.be.empty;
+                expect(controller.currentUser.Lastname).to.not.be.empty;
             });
 
             it('should have a email', function () {
-                expect(controller.currentUser.email).to.not.be.empty;
+                expect(controller.currentUser.Email).to.not.be.empty;
             });
 
-            it('should have a isAuthorized', function () {
-                expect(controller.currentUser.authorized).to.exist;
+            it('should have be enabledable', function () {
+                expect(controller.currentUser.Enabled).to.exist;
+            });
+
+            it('should have be authorizable', function () {
+                expect(controller.currentUser.Authorized).to.exist;
             });
 
             it('should have at least one role', function () {
-                expect(controller.currentUser.roles).to.have.length.above(0);
+                expect(controller.currentUser.Roles).to.have.length.above(0);
             });
 
         });

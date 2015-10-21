@@ -9,13 +9,14 @@ var mockData = (function () {
 
     function getMockUser() {
         var mockUser = {
-            userid: 1,
-            username: 'Admin',
-            firstname: 'firstname',
-            lastname: 'lastname',
-            email:'email',
-            authorized: true,
-            roles: ['Admin'],
+            Username: 'Admin',
+            Password: '',
+            Firstname: 'firstname',
+            Lastname: 'lastname',
+            Email: 'email',
+            Enabled: true,
+            Authorized: true,
+            Roles: ['Admin'],
             
         }
         return mockUser;

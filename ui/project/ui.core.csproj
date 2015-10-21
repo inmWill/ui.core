@@ -72,6 +72,7 @@
     <Content Include="app\account\account.controller.js" />
     <Content Include="app\account\account.route.js" />
     <Content Include="app\account\account.html" />
+    <Content Include="app\auth\auth.interceptor.js" />
     <Content Include="app\auth\auth.route.js" />
     <Content Include="app\auth\auth.route.spec.js" />
     <Content Include="app\auth\auth.config.js" />
