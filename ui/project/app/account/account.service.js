@@ -12,7 +12,8 @@
         var user = null;
 
         var service = {
-            getCurrentUser: getCurrentUser
+            getCurrentUser: getCurrentUser,
+            updateCurrentUser: updateCurrentUser
         };
         return service;
 
@@ -29,5 +30,19 @@
                 return exception.catcher('XHR Failed for getCurrentUser')(e);
             }
         }
+
+        function updateCurrentUser(user) {
+            return $http.put(serviceBase + 'api/Account/UpdateUserAccount', user)
+                .then(success)
+                .catch(fail);
+            function success(response) {
+                return response.data;
+            }
+            function fail(e) {
+                return exception.catcher('XHR Failed for updateCurrentUser')(e);
+            }
+
+        }
+
     }
 })();

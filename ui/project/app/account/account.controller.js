@@ -12,6 +12,7 @@
         vm.account = {};
 
         vm.title = 'User Account';
+        vm.message = '';
         vm.currentUser = {
             UserId: 0,
             UserName: '',
@@ -29,15 +30,21 @@
             return $q.all(promises).then(function () {
                 logger.info('Activated Account View');
             });
-            
         }
 
         function getCurrentUser() {
             accountService.getCurrentUser()
-                .then(function(account){
+                .then(function (account) {
                     vm.currentUser = account;
                     logger.success('Got the user account');
                 });
         }
+
+        vm.update = function (user) {
+            accountService.updateCurrentUser(vm.currentUser).then(function (results) {
+                logger.success('Account Updated');
+                vm.message = 'Account Updated';
+            })
+        };
     }
 })();
