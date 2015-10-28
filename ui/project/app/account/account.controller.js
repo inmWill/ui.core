@@ -5,9 +5,9 @@
         .module('app.account')
         .controller('AccountController', AccountController);
 
-    AccountController.$inject = ['$q', '$state', 'accountService', 'logger'];
+    AccountController.$inject = ['$q', '$rootScope', '$state', 'accountService', 'logger'];
     /* @ngInject */
-    function AccountController($q, $state, accountService, logger) {
+    function AccountController($q, $rootScope, $state, accountService, logger) {
         var vm = this;
         vm.account = {};
 
@@ -44,7 +44,7 @@
             accountService.updateCurrentUser(vm.currentUser).then(function (results) {
                 logger.success('Account Updated');
                 vm.message = 'Account Updated';
-            })
+            });
         };
     }
 })();

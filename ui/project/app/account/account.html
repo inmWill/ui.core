@@ -53,7 +53,7 @@
                     </p>
                 </div>
                 <div class="col-sm-4">
-                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your desired user name."></i>
+                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover-trigger="mouseenter" uib-popover="Please enter your desired user name."></i>
                 </div>
             </div>
 
@@ -67,7 +67,7 @@
                     </p>
                 </div>
                 <div class="col-sm-4">
-                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your given name."></i>
+                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover-trigger="mouseenter" uib-popover="Please enter your given name."></i>
                 </div>
             </div>
 
@@ -81,7 +81,7 @@
                     </p>
                 </div>
                 <div class="col-sm-4">
-                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your family name."></i>
+                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover-trigger="mouseenter" uib-popover="Please enter your family name."></i>
                 </div>
             </div>
 
@@ -95,7 +95,7 @@
                     </p>
                 </div>
                 <div class="col-sm-4">
-                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Please enter your company email."></i>
+                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover-trigger="mouseenter" uib-popover="Please enter your company email."></i>
                 </div>
             </div>
 
@@ -109,7 +109,7 @@
                     </p>
                 </div>
                 <div class="col-sm-4">
-                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="Account status."></i>
+                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover-trigger="mouseenter" uib-popover="Account status."></i>
                 </div>
             </div>
 
@@ -124,7 +124,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-4">
-                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover="your roles."></i>
+                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover-trigger="mouseenter" uib-popover="your roles."></i>
                 </div>
             </div>
             <div class="pull-right">
@@ -133,7 +133,7 @@
                     <span ng-show="!vm.working">Update <i class="fa fa-arrow-right"></i></span>
                 </button>
             </div>
-            <div id="statusAlert" data-ng-hide="vm.message == ''" data-ng-class="(vm.success) ? 'alert alert-success' : 'alert alert-danger'">
+            <div id="statusAlert" data-ng-hide="vm.message == ''" data-ng-class="(vm.message) ? 'alert alert-success' : 'alert alert-danger'">
                 {{vm.message}}
             </div>
         </form>

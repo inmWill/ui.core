@@ -31,7 +31,7 @@
     <!-- endinject -->
     <!-- endbuild -->
 </head>
-<body>
+<body class="side-menu">
     <div>
         <div ng-include="'app/layout/shell.html'"></div>
         <!--<div id="splash-page" ng-show="showSplash">
@@ -94,6 +94,10 @@
 
     <script src="/app/account/account.controller.js"></script>
 
+    <script src="/app/account/account.current-user.controller.js"></script>
+
+    <script src="/app/account/account.current-user.directive.js"></script>
+
     <script src="/app/account/account.route.js"></script>
 
     <script src="/app/account/account.service.js"></script>
@@ -106,9 +110,13 @@
 
     <script src="/app/auth/auth.controller.js"></script>
 
-    <script src="/app/auth/auth.directive.js"></script>
-
     <script src="/app/auth/auth.interceptor.js"></script>
+
+    <script src="/app/auth/auth.login.directive.js"></script>
+
+    <script src="/app/auth/auth.login.modal.controller.js"></script>
+
+    <script src="/app/auth/auth.logout.directive.js"></script>
 
     <script src="/app/auth/auth.route.js"></script>
 
@@ -141,6 +149,8 @@
     <script src="/app/layout/shell.controller.js"></script>
 
     <script src="/app/layout/sidebar.controller.js"></script>
+
+    <script src="/app/layout/submenu.toggle.directive.js"></script>
 
     <script src="/app/people/people.controller.js"></script>
 

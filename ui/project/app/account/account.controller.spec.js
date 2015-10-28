@@ -71,8 +71,8 @@ describe('AccountController', function() {
                 controller.update(controller.currentUser);
                 $rootScope.$apply();
                 expect(controller.message).to.equal('Account Updated');
-            })
-        })
+            });
+        });
 
 
             //it()

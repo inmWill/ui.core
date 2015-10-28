@@ -5,9 +5,9 @@
         .module('app.auth')
         .controller('AuthController', AuthController);
 
-    AuthController.$inject = ['$state', 'authService', 'logger'];
+    AuthController.$inject = ['$rootScope', 'authService', 'AUTH_EVENTS'];
 
-    function AuthController($state, authService, logger) {
+    function AuthController($rootScope, authService, AUTH_EVENTS) {
         /* jshint validthis:true */
         var vm = this;
 
@@ -16,35 +16,19 @@
             password: ''
         };
 
-        vm.currentUser = null;
-        vm.title = 'auth';
+
+        vm.title = 'Login';
         vm.result = 'Please Login';
 
         vm.login = function () {
             authService.login(vm.credentials)
                 .then(function (token) {
-                    getCurrentUser();
                     vm.result = 'Login Successful!';
+               //     $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
                 })
                 .catch(function (error) {
                     vm.result = error.error_description;
                 });
         };
-
-        vm.logout = function () {
-            authService.logout();
-            vm.currentUser = {};
-            vm.result = 'Logout Successful!';
-        };
-
-        function getCurrentUser() {
-            vm.currentUser = authService.currentUser();
-        }
-
-        activate();
-
-        function activate() {
-            getCurrentUser();
-        }
     }
 })();

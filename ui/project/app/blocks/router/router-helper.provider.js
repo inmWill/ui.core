@@ -1,5 +1,5 @@
 /* Help configure the state-base ui.router */
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -17,14 +17,14 @@
 
         $locationProvider.html5Mode(true);
 
-        this.configure = function(cfg) {
+        this.configure = function (cfg) {
             angular.extend(config, cfg);
         };
 
         this.$get = RouterHelper;
-        RouterHelper.$inject = ['$location', '$rootScope', '$state', 'logger'];
+        RouterHelper.$inject = ['$location', '$rootScope', '$state', 'logger', 'authService'];
         /* @ngInject */
-        function RouterHelper($location, $rootScope, $state, logger) {
+        function RouterHelper($location, $rootScope, $state, logger, authService) {
             var handlingStateChangeError = false;
             var hasOtherwise = false;
             var stateCounts = {
@@ -45,7 +45,7 @@
             ///////////////
 
             function configureStates(states, otherwisePath) {
-                states.forEach(function(state) {
+                states.forEach(function (state) {
                     state.config.resolve =
                         angular.extend(state.config.resolve || {}, config.resolveAlways);
                     $stateProvider.state(state.state, state.config);
@@ -61,7 +61,7 @@
                 // On routing error, go to the dashboard.
                 // Provide an exit clause if it tries to do it twice.
                 $rootScope.$on('$stateChangeError',
-                    function(event, toState, toParams, fromState, fromParams, error) {
+                    function (event, toState, toParams, fromState, fromParams, error) {
                         if (handlingStateChangeError) {
                             return;
                         }
@@ -79,16 +79,46 @@
                 );
             }
 
+            function requireAuth() {
+                // Route cancellation:
+                // On routing error, go to the dashboard.
+                // Provide an exit clause if it tries to do it twice.
+                $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
+                    var requireAuth = toState.settings.requireAuth;
+
+                    if (requireAuth && (typeof $rootScope.currentUser === 'undefined' || $rootScope.currentUser.authorized !== true)) {
+                        logger.warning('THIS PAGE REQUIRES A LOGIN!');
+                        event.preventDefault();
+                        authService.openLoginModal()
+                            .then(function (result) {
+                                if (result) {
+                                    return $state.go(toState.name, toParams);
+                                }
+                                else {
+                                    $location.path('/login');
+                                }
+                            })
+                            .catch(function (error) {
+                                logger.error('Error unknown account: ' + error);
+                                return $state.go('dashboard');
+                            });
+                        // get me a login modal!
+                    }
+                });
+
+            }
+
             function init() {
                 handleRoutingErrors();
                 updateDocTitle();
+                requireAuth();
             }
 
             function getStates() { return $state.get(); }
 
             function updateDocTitle() {
                 $rootScope.$on('$stateChangeSuccess',
-                    function(event, toState, toParams, fromState, fromParams) {
+                    function (event, toState, toParams, fromState, fromParams) {
                         stateCounts.changes++;
                         handlingStateChangeError = false;
                         var title = config.docTitle + ' ' + (toState.title || '');

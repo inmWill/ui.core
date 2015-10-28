@@ -60,8 +60,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\account\account.current-user.controller.js" />
     <Content Include="app\account\account.controller.spec.js" />
     <Content Include="app\account\account.service.js" />
+    <Content Include="app\account\account.current-user.directive.js" />
+    <Content Include="app\account\current-user.html" />
     <Content Include="app\admin\admin.controller.js" />
     <Content Include="app\admin\admin.controller.spec.js" />
     <Content Include="app\admin\admin.html" />
@@ -72,16 +75,19 @@
     <Content Include="app\account\account.controller.js" />
     <Content Include="app\account\account.route.js" />
     <Content Include="app\account\account.html" />
+    <Content Include="app\auth\auth.login.modal.controller.js" />
+    <Content Include="app\auth\auth.logout.directive.js" />
     <Content Include="app\auth\auth.interceptor.js" />
     <Content Include="app\auth\auth.route.js" />
     <Content Include="app\auth\auth.route.spec.js" />
     <Content Include="app\auth\auth.config.js" />
     <Content Include="app\auth\auth.controller.js" />
-    <Content Include="app\auth\auth.directive.js" />
+    <Content Include="app\auth\auth.login.directive.js" />
     <Content Include="app\auth\auth.module.js" />
     <Content Include="app\auth\auth.controller.spec.js" />
     <Content Include="app\auth\auth.service.js" />
     <Content Include="app\auth\login.html" />
+    <Content Include="app\auth\logout.html" />
     <Content Include="app\blocks\exception\exception-handler.provider.js" />
     <Content Include="app\blocks\exception\exception-handler.provider.spec.js" />
     <Content Include="app\blocks\exception\exception.js" />
@@ -115,6 +121,7 @@
     <Content Include="app\layout\sidebar.controller.js" />
     <Content Include="app\layout\sidebar.controller.spec.js" />
     <Content Include="app\layout\sidebar.html" />
+    <Content Include="app\layout\submenu.toggle.directive.js" />
     <Content Include="app\people\people.controller.spec.js" />
     <Content Include="app\people\people.route.js" />
     <Content Include="app\people\people.controller.js" />
@@ -127,6 +134,13 @@
     <Content Include="bower_components\angular-animate\angular-animate.js" />
     <Content Include="bower_components\angular-animate\angular-animate.min.js" />
     <Content Include="bower_components\angular-animate\index.js" />
+    <Content Include="bower_components\angular-bootstrap\.gitignore" />
+    <Content Include="bower_components\angular-bootstrap\index.js" />
+    <Content Include="bower_components\angular-bootstrap\ui-bootstrap-csp.css" />
+    <Content Include="bower_components\angular-bootstrap\ui-bootstrap-tpls.js" />
+    <Content Include="bower_components\angular-bootstrap\ui-bootstrap-tpls.min.js" />
+    <Content Include="bower_components\angular-bootstrap\ui-bootstrap.js" />
+    <Content Include="bower_components\angular-bootstrap\ui-bootstrap.min.js" />
     <Content Include="bower_components\angular-loading-bar\build\loading-bar.css" />
     <Content Include="bower_components\angular-loading-bar\build\loading-bar.js" />
     <Content Include="bower_components\angular-loading-bar\build\loading-bar.min.css" />
@@ -4556,6 +4570,11 @@
     <Content Include="bower_components\satellizer\bower.json" />
     <Content Include="bower_components\satellizer\LICENSE" />
     <Content Include="bower_components\satellizer\README.md" />
+    <Content Include="bower_components\angular-bootstrap\.bower.json" />
+    <Content Include="bower_components\angular-bootstrap\.npmignore" />
+    <Content Include="bower_components\angular-bootstrap\bower.json" />
+    <Content Include="bower_components\angular-bootstrap\package.json" />
+    <Content Include="bower_components\angular-bootstrap\README.md" />
     <None Include="Properties\PublishProfiles\OCVNgUI_Sandcastle_Development.pubxml" />
     <Content Include="server\app.js" />
     <Content Include="server\data.js" />

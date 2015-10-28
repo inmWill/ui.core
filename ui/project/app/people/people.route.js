@@ -22,6 +22,7 @@
                     controllerAs: 'vm',
                     title: 'people',
                     settings: {
+                        requireAuth: false,
                         nav: 3,
                         content: '<i class="fa fa-user"></i> People'
                     }

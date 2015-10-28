@@ -15,10 +15,10 @@
 <div class="header high">
     <h1>Code coverage report for <span class="entity">./app/core/dataservice.js</span></h1>
     <h2>
-        Statements: <span class="metric">80% <small>(12 / 15)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">81.82% <small>(9 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">50% <small>(3 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">78.57% <small>(11 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">50% <small>(2 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">90% <small>(9 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/core/</a> &#187; dataservice.js</div>
@@ -59,7 +59,17 @@
 32
 33
 34
-35</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -69,26 +79,36 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">8</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">8</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -112,18 +132,28 @@
         return service;
 &nbsp;
 &nbsp;
-        function getMessageCount() { return $q.when(72); }
+<span class="fstat-no" title="function not covered" >        function getMessageCount() {</span> <span class="cstat-no" title="statement not covered" >return $q.when(72); </span>}
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function getPeople() { </span>
-<span class="cstat-no" title="statement not covered" >            return $http.get(serviceBase + 'api/ClientEmployee/GetPagedClients?page=1&amp;pagesize=20')</span>
-                .then(success)
-                .catch(fail);
-<span class="fstat-no" title="function not covered" >            function success(response) {</span>
-<span class="cstat-no" title="statement not covered" >                return response.data;</span>
-            }
-<span class="fstat-no" title="function not covered" >            function fail(e) {</span>
-<span class="cstat-no" title="statement not covered" >                return exception.catcher('XHR Failed for getPeople')(e);</span>
-            }
+<span class="fstat-no" title="function not covered" >        function getPeople() {</span>
+<span class="cstat-no" title="statement not covered" >            return $q.when([</span>
+        { id: 1, firstName: 'John', lastName: 'Papa', age: 25, location: 'Florida' },
+        { id: 2, firstName: 'Ward', lastName: 'Bell', age: 31, location: 'California' },
+        { id: 3, firstName: 'Colleen', lastName: 'Jones', age: 21, location: 'New York' },
+        { id: 4, firstName: 'Madelyn', lastName: 'Green', age: 18, location: 'North Dakota' },
+        { id: 5, firstName: 'Ella', lastName: 'Jobs', age: 18, location: 'South Dakota' },
+        { id: 6, firstName: 'Landon', lastName: 'Gates', age: 11, location: 'South Carolina' },
+        { id: 7, firstName: 'Haley', lastName: 'Guthrie', age: 35, location: 'Wyoming' },
+        { id: 8, firstName: 'Aaron', lastName: 'Jinglehiemer', age: 22, location: 'Utah' }
+            ]);
+            //return $http.get(serviceBase + 'api/ClientEmployee/GetPagedClients?page=1&amp;pagesize=20')
+            //    .then(success)
+            //    .catch(fail);
+            //function success(response) {
+            //    return response.data;
+            //}
+            //function fail(e) {
+            //    return exception.catcher('XHR Failed for getPeople')(e);
+            //}
         }
     }
 })();
@@ -132,7 +162,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Oct 20 2015 23:23:09 GMT-0600 (Mountain Daylight Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Oct 27 2015 22:47:14 GMT-0600 (Mountain Daylight Time)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

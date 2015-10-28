@@ -18,7 +18,11 @@
                 config: {
                     url: '/404',
                     templateUrl: 'app/core/404.html',
-                    title: '404'
+                    title: '404',
+                    settings: {
+                        requireAuth: false,
+                        nav: -1
+                    }
                 }
             }
         ];

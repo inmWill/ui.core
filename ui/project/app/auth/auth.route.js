@@ -22,8 +22,7 @@
                     controllerAs: 'vm',
                     title: 'Auth',
                     settings: {
-                        nav: -1,
-                        content: '<i class="fa fa-lock"></i> Login'
+                        requireAuth: false
                     }
                 }
             }

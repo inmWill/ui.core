@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('app.auth')
-        .directive('authLogin', authLogin);
+        .module('app.account')
+        .directive('currentUser', currentUser);
 
-    authLogin.$inject = ['$window'];
+    currentUser.$inject = ['$window'];
     
-    function authLogin() {
+    function currentUser() {
         // Usage:
         //     <auth></auth>
         // Creates:
@@ -15,8 +15,8 @@
         var directive = {
             link: link,
             restrict: 'AE',
-            templateUrl: 'app/blocks/auth/login.html',
-            controller: 'AuthController',
+            templateUrl: 'app/account/current-user.html',
+            controller: 'CurrentUserController',
             controllerAs: 'vm'
         };
         return directive;

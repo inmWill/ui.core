@@ -22,8 +22,7 @@
                     controllerAs: 'vm',
                     title: 'account',
                     settings: {
-                        nav: 3,
-                        content: '<i class="fa fa-user"></i> Account'
+                        requireAuth: true
                     }
                 }
             }
