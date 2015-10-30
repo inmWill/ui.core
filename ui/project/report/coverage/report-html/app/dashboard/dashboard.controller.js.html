@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header low">
+<div class="header high">
     <h1>Code coverage report for <span class="entity">./app/dashboard/dashboard.controller.js</span></h1>
     <h2>
-        Statements: <span class="metric">31.82% <small>(7 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">100% <small>(22 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">12.5% <small>(1 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">31.82% <small>(7 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(8 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(22 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/dashboard/</a> &#187; dashboard.controller.js</div>
@@ -78,35 +78,35 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -120,36 +120,36 @@
 &nbsp;
     DashboardController.$inject = ['$q', 'dataservice', 'logger'];
     /* @ngInject */
-<span class="fstat-no" title="function not covered" >    function DashboardController($q, dataservice, logger) {</span>
-<span class="cstat-no" title="statement not covered" >        var vm = this;</span>
-<span class="cstat-no" title="statement not covered" >        vm.news = {</span>
+    function DashboardController($q, dataservice, logger) {
+        var vm = this;
+        vm.news = {
             title: 'ui.core',
             description: 'Notifications or Application Events.'
         };
-<span class="cstat-no" title="statement not covered" >        vm.messageCount = 0;</span>
-<span class="cstat-no" title="statement not covered" >        vm.people = [];</span>
-<span class="cstat-no" title="statement not covered" >        vm.title = 'Dashboard';</span>
+        vm.messageCount = 0;
+        vm.people = [];
+        vm.title = 'Dashboard';
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        activate();</span>
+        activate();
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function activate() {</span>
-<span class="cstat-no" title="statement not covered" >            var promises = [getMessageCount(), getPeople()];</span>
-<span class="cstat-no" title="statement not covered" >            return $q.all(promises).then(<span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >                logger.info('Activated Dashboard View');</span>
+        function activate() {
+            var promises = [getMessageCount(), getPeople()];
+            return $q.all(promises).then(function() {
+                logger.info('Activated Dashboard View');
             });
         }
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function getMessageCount() {</span>
-<span class="cstat-no" title="statement not covered" >            return dataservice.getMessageCount().then(<span class="fstat-no" title="function not covered" >function (data) {</span></span>
-<span class="cstat-no" title="statement not covered" >                vm.messageCount = data;</span>
-<span class="cstat-no" title="statement not covered" >                return vm.messageCount;</span>
+        function getMessageCount() {
+            return dataservice.getMessageCount().then(function (data) {
+                vm.messageCount = data;
+                return vm.messageCount;
             });
         }
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function getPeople() {</span>
-<span class="cstat-no" title="statement not covered" >            return dataservice.getPeople().then(<span class="fstat-no" title="function not covered" >function (data) {</span></span>
-<span class="cstat-no" title="statement not covered" >                vm.people = data;</span>
-<span class="cstat-no" title="statement not covered" >                return vm.people;</span>
+        function getPeople() {
+            return dataservice.getPeople().then(function (data) {
+                vm.people = data;
+                return vm.people;
             });
         }
     }
@@ -159,7 +159,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Oct 27 2015 22:47:14 GMT-0600 (Mountain Daylight Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Oct 28 2015 21:41:10 GMT-0600 (Mountain Daylight Time)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

@@ -20,7 +20,7 @@
                 $scope.logout = function () {
                     authService.logout();
                     logger.info('Logged Out Successfully!');
-                    $location.path('/login');
+                    $location.path('/');
                 };
             }
         };
