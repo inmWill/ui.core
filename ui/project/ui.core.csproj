@@ -78,13 +78,9 @@
     <Content Include="app\auth\auth.login.modal.controller.js" />
     <Content Include="app\auth\auth.logout.directive.js" />
     <Content Include="app\auth\auth.interceptor.js" />
-    <Content Include="app\auth\auth.route.js" />
-    <Content Include="app\auth\auth.route.spec.js" />
     <Content Include="app\auth\auth.config.js" />
-    <Content Include="app\auth\auth.controller.js" />
     <Content Include="app\auth\auth.login.directive.js" />
     <Content Include="app\auth\auth.module.js" />
-    <Content Include="app\auth\auth.controller.spec.js" />
     <Content Include="app\auth\auth.service.js" />
     <Content Include="app\auth\login.html" />
     <Content Include="app\auth\logout.html" />
