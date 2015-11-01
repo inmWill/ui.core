@@ -35,7 +35,7 @@
                 function () {
                     localStorageService.remove('authorizationData');
                     localStorageService.remove('userData');
-                    $location.path('/login');
+                    $location.path('/');
                     cfpLoadingBar.complete();
                 });
             }

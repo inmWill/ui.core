@@ -5,9 +5,9 @@
         .module('app.account')
         .factory('accountService', accountService);
 
-    accountService.$inject = ['$http', '$q', '$rootScope', 'exception', 'logger', 'APP_CONFIG', 'AUTH_EVENTS'];
+    accountService.$inject = ['$http', '$q', '$rootScope', 'exception', 'logger', 'APP_CONFIG', 'AUTH_EVENTS', 'localStorageService'];
     /* @ngInject */
-    function accountService($http, $q, $rootScope, exception, logger, APP_CONFIG, AUTH_EVENTS) {
+    function accountService($http, $q, $rootScope, exception, logger, APP_CONFIG, AUTH_EVENTS, localStorageService) {
         var serviceBase = APP_CONFIG.serviceURIBase;
         var user = null;
 
@@ -24,6 +24,7 @@
                 .then(success)
                 .catch(fail);
             function success(response) {
+                syncLocalUser(response.data.Firstname, response.data.Lastname);
                 return response.data;
             }
             function fail(e) {
@@ -36,17 +37,20 @@
                 .then(success)
                 .catch(fail);
             function success(response) {
-                syncLocalUser(response.data.Firstname, response.data.Lastname);
-                $rootScope.$broadcast(AUTH_EVENTS.accountUpdated);
+                syncLocalUser(response.data.Firstname, response.data.Lastname);               
                 return response.data;
             }
             function fail(e) {
                 return exception.catcher('XHR Failed for updateCurrentUser')(e);
             }
 
-            function syncLocalUser(first, last) {
-                $rootScope.currentUser.displayName = first + ' ' + last;
-            }
+            
+        }
+
+        function syncLocalUser(first, last) {
+            $rootScope.currentUser.displayName = first + ' ' + last;
+            localStorageService.set('authorizationData', $rootScope.currentUser);
+            $rootScope.$broadcast(AUTH_EVENTS.accountUpdated);
         }
 
     }

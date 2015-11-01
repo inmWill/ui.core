@@ -11,6 +11,16 @@
         var baseUrl = APP_CONFIG.serviceURIBase;
         var isRegistered = APP_CONFIG.isRegistered;
 
+        var service = {
+            login: login,
+            logout: logout,
+            register: register,
+            refreshUserToken: refreshUserToken,
+            currentUser: currentUser,
+            openLoginModal: openLoginModal,
+            checkUsername: checkUsername
+        };
+
         var user = {
             authorized: false,
             username: '',
@@ -19,16 +29,6 @@
             token: '',
             refreshToken: ''
         };
-
-        var service = {
-            login: login,
-            logout: logout,
-            refreshUserToken: refreshUserToken,
-            currentUser: currentUser,
-            openLoginModal: openLoginModal
-        };
-        return service;
-
 
         function login(credentials) {
 
@@ -76,6 +76,14 @@
             return true;
         }
 
+        function register(newAccount) {
+
+            return $http.post(baseUrl + 'api/account/Register', newAccount).then(function (response) {
+                return response;
+            });
+
+        }
+
         function refreshUserToken() {
             var deferred = $q.defer();
 
@@ -117,6 +125,7 @@
             }
             return user;
         }
+
         function readStoredUser() {
             var storedUser = localStorageService.get('authorizationData');
             try {
@@ -127,21 +136,30 @@
             } catch (ex) { /* Silently fail..*/ }
         }
 
-        readStoredUser();
+      //  readStoredUser();
 
         function openLoginModal() {
             var instance = $uibModal.open({
-                templateUrl: '/app/auth/login.html',
-                controller: 'AuthLoginModalController',
+                templateUrl: '/app/auth/auth-modal.html',
+                controller: 'AuthModalController',
                 controllerAs: 'vm',
-                size: 'sm'
+                backdrop: 'static'
             });
 
             return instance.result.then(function (credentials) {
                 logger.info('On your way');
                 return true;
-             //   login(credentials);
             });
         }
+
+        function checkUsername(username) {
+
+            return $http.get(baseUrl + 'api/account/UsernameAvailable?username='+ username).then(function (response) {
+                return response;
+            });
+
+        }
+
+        return service;
     }
 })();

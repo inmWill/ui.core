@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header high">
+<div class="header low">
     <h1>Code coverage report for <span class="entity">./app/account/account.controller.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(22 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">26.09% <small>(6 / 23)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(8 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(22 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">12.5% <small>(1 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">26.09% <small>(6 / 23)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/account/</a> &#187; account.controller.js</div>
@@ -75,7 +75,8 @@
 48
 49
 50
-51</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+51
+52</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -85,42 +86,43 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-yes">12</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,13 +136,14 @@
 &nbsp;
     AccountController.$inject = ['$q', '$rootScope', '$state', 'accountService', 'logger'];
     /* @ngInject */
-    function AccountController($q, $rootScope, $state, accountService, logger) {
-        var vm = this;
-        vm.account = {};
+<span class="fstat-no" title="function not covered" >    function AccountController($q, $rootScope, $state, accountService, logger) {</span>
+<span class="cstat-no" title="statement not covered" >        var vm = this;</span>
+<span class="cstat-no" title="statement not covered" >        vm.account = {};</span>
 &nbsp;
-        vm.title = 'User Account';
-        vm.message = '';
-        vm.currentUser = {
+<span class="cstat-no" title="statement not covered" >        vm.title = 'User Account';</span>
+<span class="cstat-no" title="statement not covered" >        vm.message = '';</span>
+<span class="cstat-no" title="statement not covered" >        vm.editAccount = 0;</span>
+<span class="cstat-no" title="statement not covered" >        vm.currentUser = {</span>
             UserId: 0,
             UserName: '',
             FirstName: '',
@@ -150,27 +153,27 @@
             Roles: ['']
         };
 &nbsp;
-        activate();
+<span class="cstat-no" title="statement not covered" >        activate();</span>
 &nbsp;
-        function activate() {
-            var promises = [getCurrentUser()];
-            return $q.all(promises).then(function () {
-                logger.info('Activated Account View');
+<span class="fstat-no" title="function not covered" >        function activate() {</span>
+<span class="cstat-no" title="statement not covered" >            var promises = [getCurrentUser()];</span>
+<span class="cstat-no" title="statement not covered" >            return $q.all(promises).then(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                logger.info('Activated Account View');</span>
             });
         }
 &nbsp;
-        function getCurrentUser() {
-            accountService.getCurrentUser()
-                .then(function (account) {
-                    vm.currentUser = account;
-                    logger.success('Got the user account');
+<span class="fstat-no" title="function not covered" >        function getCurrentUser() {</span>
+<span class="cstat-no" title="statement not covered" >            accountService.getCurrentUser()</span>
+                .then(<span class="fstat-no" title="function not covered" >function (account) {</span>
+<span class="cstat-no" title="statement not covered" >                    vm.currentUser = account;</span>
+<span class="cstat-no" title="statement not covered" >                    logger.success('Got the user account');</span>
                 });
         }
 &nbsp;
-        vm.update = function (user) {
-            accountService.updateCurrentUser(vm.currentUser).then(function (results) {
-                logger.success('Account Updated');
-                vm.message = 'Account Updated';
+<span class="cstat-no" title="statement not covered" >        vm.update = <span class="fstat-no" title="function not covered" >function (user) {</span></span>
+<span class="cstat-no" title="statement not covered" >            accountService.updateCurrentUser(vm.currentUser).then(<span class="fstat-no" title="function not covered" >function (results) {</span></span>
+<span class="cstat-no" title="statement not covered" >                logger.success('Account Updated');</span>
+<span class="cstat-no" title="statement not covered" >                vm.message = 'Account Updated';</span>
             });
         };
     }
@@ -180,7 +183,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Oct 30 2015 15:28:15 GMT-0600 (Mountain Daylight Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 01 2015 16:18:01 GMT-0700 (Mountain Standard Time)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header medium">
+<div class="header low">
     <h1>Code coverage report for <span class="entity">./app/account/account.service.js</span></h1>
     <h2>
-        Statements: <span class="metric">62.5% <small>(15 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">42.31% <small>(11 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">22.22% <small>(2 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">62.5% <small>(15 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">11.11% <small>(1 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">42.31% <small>(11 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/account/</a> &#187; account.service.js</div>
@@ -78,7 +78,11 @@
 51
 52
 53
-54</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+54
+55
+56
+57
+58</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -86,27 +90,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -118,7 +110,11 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -126,7 +122,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -138,17 +146,17 @@
         .module('app.account')
         .factory('accountService', accountService);
 &nbsp;
-    accountService.$inject = ['$http', '$q', '$rootScope', 'exception', 'logger', 'APP_CONFIG', 'AUTH_EVENTS'];
+    accountService.$inject = ['$http', '$q', '$rootScope', 'exception', 'logger', 'APP_CONFIG', 'AUTH_EVENTS', 'localStorageService'];
     /* @ngInject */
-    function accountService($http, $q, $rootScope, exception, logger, APP_CONFIG, AUTH_EVENTS) {
-        var serviceBase = APP_CONFIG.serviceURIBase;
-        var user = null;
+<span class="fstat-no" title="function not covered" >    function accountService($http, $q, $rootScope, exception, logger, APP_CONFIG, AUTH_EVENTS, localStorageService) {</span>
+<span class="cstat-no" title="statement not covered" >        var serviceBase = APP_CONFIG.serviceURIBase;</span>
+<span class="cstat-no" title="statement not covered" >        var user = null;</span>
 &nbsp;
-        var service = {
+<span class="cstat-no" title="statement not covered" >        var service = {</span>
             getCurrentUser: getCurrentUser,
             updateCurrentUser: updateCurrentUser
         };
-        return service;
+<span class="cstat-no" title="statement not covered" >        return service;</span>
 &nbsp;
 &nbsp;
 &nbsp;
@@ -157,6 +165,7 @@
                 .then(success)
                 .catch(fail);
 <span class="fstat-no" title="function not covered" >            function success(response) {</span>
+<span class="cstat-no" title="statement not covered" >                syncLocalUser(response.data.Firstname, response.data.Lastname);</span>
 <span class="cstat-no" title="statement not covered" >                return response.data;</span>
             }
 <span class="fstat-no" title="function not covered" >            function fail(e) {</span>
@@ -169,17 +178,20 @@
                 .then(success)
                 .catch(fail);
 <span class="fstat-no" title="function not covered" >            function success(response) {</span>
-<span class="cstat-no" title="statement not covered" >                syncLocalUser(response.data.Firstname, response.data.Lastname);</span>
-<span class="cstat-no" title="statement not covered" >                $rootScope.$broadcast(AUTH_EVENTS.accountUpdated);</span>
+<span class="cstat-no" title="statement not covered" >                syncLocalUser(response.data.Firstname, response.data.Lastname);               </span>
 <span class="cstat-no" title="statement not covered" >                return response.data;</span>
             }
 <span class="fstat-no" title="function not covered" >            function fail(e) {</span>
 <span class="cstat-no" title="statement not covered" >                return exception.catcher('XHR Failed for updateCurrentUser')(e);</span>
             }
 &nbsp;
-<span class="fstat-no" title="function not covered" >            function syncLocalUser(first, last) {</span>
-<span class="cstat-no" title="statement not covered" >                $rootScope.currentUser.displayName = first + ' ' + last;</span>
-            }
+            
+        }
+&nbsp;
+<span class="fstat-no" title="function not covered" >        function syncLocalUser(first, last) {</span>
+<span class="cstat-no" title="statement not covered" >            $rootScope.currentUser.displayName = first + ' ' + last;</span>
+<span class="cstat-no" title="statement not covered" >            localStorageService.set('authorizationData', $rootScope.currentUser);</span>
+<span class="cstat-no" title="statement not covered" >            $rootScope.$broadcast(AUTH_EVENTS.accountUpdated);</span>
         }
 &nbsp;
     }
@@ -189,7 +201,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Oct 30 2015 15:28:15 GMT-0600 (Mountain Daylight Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 01 2015 16:18:01 GMT-0700 (Mountain Standard Time)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

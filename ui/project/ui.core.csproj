@@ -75,14 +75,15 @@
     <Content Include="app\account\account.controller.js" />
     <Content Include="app\account\account.route.js" />
     <Content Include="app\account\account.html" />
-    <Content Include="app\auth\auth.login.modal.controller.js" />
+    <Content Include="app\animation\animation.module.js" />
+    <Content Include="app\animation\form-line.directive.js" />
+    <Content Include="app\auth\auth.modal.controller.js" />
     <Content Include="app\auth\auth.logout.directive.js" />
     <Content Include="app\auth\auth.interceptor.js" />
     <Content Include="app\auth\auth.config.js" />
-    <Content Include="app\auth\auth.login.directive.js" />
     <Content Include="app\auth\auth.module.js" />
     <Content Include="app\auth\auth.service.js" />
-    <Content Include="app\auth\login.html" />
+    <Content Include="app\auth\auth-modal.html" />
     <Content Include="app\auth\logout.html" />
     <Content Include="app\blocks\exception\exception-handler.provider.js" />
     <Content Include="app\blocks\exception\exception-handler.provider.spec.js" />
@@ -2328,6 +2329,18 @@
     <Content Include="bower_components\moment\templates\globals.js" />
     <Content Include="bower_components\moment\templates\locale-header.js" />
     <Content Include="bower_components\moment\templates\test-header.js" />
+    <Content Include="bower_components\ng-password-strength\.gitattributes" />
+    <Content Include="bower_components\ng-password-strength\.gitignore" />
+    <Content Include="bower_components\ng-password-strength\app\index.html" />
+    <Content Include="bower_components\ng-password-strength\app\scripts\directives\ng-password-strength.js" />
+    <Content Include="bower_components\ng-password-strength\dist\index.html" />
+    <Content Include="bower_components\ng-password-strength\dist\scripts\ng-password-strength.js" />
+    <Content Include="bower_components\ng-password-strength\dist\scripts\ng-password-strength.min.js" />
+    <Content Include="bower_components\ng-password-strength\dist\scripts\vendor.js" />
+    <Content Include="bower_components\ng-password-strength\dist\styles\main.css" />
+    <Content Include="bower_components\ng-password-strength\Gruntfile.js" />
+    <Content Include="bower_components\ng-password-strength\test\karma.conf.js" />
+    <Content Include="bower_components\ng-password-strength\test\spec\controllers\main.js" />
     <Content Include="bower_components\satellizer\satellizer.js" />
     <Content Include="bower_components\satellizer\satellizer.min.js" />
     <Content Include="bower_components\sinon\index.js" />
@@ -4571,6 +4584,18 @@
     <Content Include="bower_components\angular-bootstrap\bower.json" />
     <Content Include="bower_components\angular-bootstrap\package.json" />
     <Content Include="bower_components\angular-bootstrap\README.md" />
+    <Content Include="bower_components\ng-password-strength\.bower.json" />
+    <Content Include="bower_components\ng-password-strength\.bowerrc" />
+    <Content Include="bower_components\ng-password-strength\.editorconfig" />
+    <Content Include="bower_components\ng-password-strength\.jshintrc" />
+    <Content Include="bower_components\ng-password-strength\.travis.yml" />
+    <Content Include="bower_components\ng-password-strength\app\.buildignore" />
+    <Content Include="bower_components\ng-password-strength\app\styles\main.scss" />
+    <Content Include="bower_components\ng-password-strength\bower.json" />
+    <Content Include="bower_components\ng-password-strength\LICENSE.md" />
+    <Content Include="bower_components\ng-password-strength\package.json" />
+    <Content Include="bower_components\ng-password-strength\README.md" />
+    <Content Include="bower_components\ng-password-strength\test\.jshintrc" />
     <None Include="Properties\PublishProfiles\OCVNgUI_Sandcastle_Development.pubxml" />
     <Content Include="server\app.js" />
     <Content Include="server\data.js" />
@@ -4605,6 +4630,8 @@
     <Content Include="styles\inc\misc.less" />
     <Content Include="styles\containers\card.less" />
     <Content Include="styles\inc\loading.less" />
+    <Content Include="styles\inc\tabs.less" />
+    <Content Include="styles\inc\form.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

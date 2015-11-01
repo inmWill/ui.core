@@ -13,6 +13,7 @@
 
         vm.title = 'User Account';
         vm.message = '';
+        vm.editAccount = 0;
         vm.currentUser = {
             UserId: 0,
             UserName: '',

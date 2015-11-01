@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header high">
+<div class="header low">
     <h1>Code coverage report for <span class="entity">./app/layout/shell.controller.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(17 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">35.29% <small>(6 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(5 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(17 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">20% <small>(1 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">35.29% <small>(6 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/layout/</a> &#187; shell.controller.js</div>
@@ -71,28 +71,28 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -106,29 +106,29 @@
 &nbsp;
     ShellController.$inject = ['$rootScope', '$timeout', 'config', 'logger'];
     /* @ngInject */
-    function ShellController($rootScope, $timeout, config, logger) {
-        var shell = this;
-        shell.busyMessage = 'Please wait ...';
-        shell.isBusy = true;
-        shell.sidebarToggle = false;
-        $rootScope.showSplash = true;
-        shell.navline = {
+<span class="fstat-no" title="function not covered" >    function ShellController($rootScope, $timeout, config, logger) {</span>
+<span class="cstat-no" title="statement not covered" >        var shell = this;</span>
+<span class="cstat-no" title="statement not covered" >        shell.busyMessage = 'Please wait ...';</span>
+<span class="cstat-no" title="statement not covered" >        shell.isBusy = true;</span>
+<span class="cstat-no" title="statement not covered" >        shell.sidebarToggle = false;</span>
+<span class="cstat-no" title="statement not covered" >        $rootScope.showSplash = true;</span>
+<span class="cstat-no" title="statement not covered" >        shell.navline = {</span>
             title: config.appTitle,
             text: 'Angular Seed',
             link: 'http://google.com'
         };
 &nbsp;
-        activate();
+<span class="cstat-no" title="statement not covered" >        activate();</span>
 &nbsp;
-        function activate() {
-            logger.success(config.appTitle + ' loaded!', null);
-            hideSplash();
+<span class="fstat-no" title="function not covered" >        function activate() {</span>
+<span class="cstat-no" title="statement not covered" >            logger.success(config.appTitle + ' loaded!', null);</span>
+<span class="cstat-no" title="statement not covered" >            hideSplash();</span>
         }
 &nbsp;
-        function hideSplash() {
+<span class="fstat-no" title="function not covered" >        function hideSplash() {</span>
             //Force a 1 second delay so we can see the splash.
-            $timeout(function() {
-                $rootScope.showSplash = false;
+<span class="cstat-no" title="statement not covered" >            $timeout(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                $rootScope.showSplash = false;</span>
             }, 1000);
         }
     }
@@ -138,7 +138,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Oct 30 2015 15:28:15 GMT-0600 (Mountain Daylight Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 01 2015 16:18:01 GMT-0700 (Mountain Standard Time)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>
