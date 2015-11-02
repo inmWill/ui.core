@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header low">
+<div class="header high">
     <h1>Code coverage report for <span class="entity">./app/people/people.controller.js</span></h1>
     <h2>
-        Statements: <span class="metric">35% <small>(7 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">90% <small>(18 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">14.29% <small>(1 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">35% <small>(7 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">85.71% <small>(6 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">90% <small>(18 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/people/</a> &#187; people.controller.js</div>
@@ -76,27 +76,27 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -116,28 +116,28 @@
 &nbsp;
     PeopleController.$inject = ['$q', '$state', 'dataservice', 'logger'];
     /* @ngInject */
-<span class="fstat-no" title="function not covered" >    function PeopleController($q, $state, dataservice, logger) {</span>
-<span class="cstat-no" title="statement not covered" >        var vm = this;</span>
-<span class="cstat-no" title="statement not covered" >        vm.title = 'People';</span>
-<span class="cstat-no" title="statement not covered" >        vm.people = [];</span>
-<span class="cstat-no" title="statement not covered" >        vm.gotoPerson = gotoPerson;</span>
+    function PeopleController($q, $state, dataservice, logger) {
+        var vm = this;
+        vm.title = 'People';
+        vm.people = [];
+        vm.gotoPerson = gotoPerson;
 &nbsp;
     //    getPeople();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        activate();</span>
+        activate();
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function activate() {</span>
-<span class="cstat-no" title="statement not covered" >            var promises = [getPeople()];</span>
-<span class="cstat-no" title="statement not covered" >            return $q.all(promises).then(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                logger.info('Activated People View');</span>
+        function activate() {
+            var promises = [getPeople()];
+            return $q.all(promises).then(function () {
+                logger.info('Activated People View');
             });
         }
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function getPeople() {</span>
-<span class="cstat-no" title="statement not covered" >            dataservice.getPeople()</span>
-                .then(<span class="fstat-no" title="function not covered" >function(people) {</span>
-<span class="cstat-no" title="statement not covered" >                    vm.people = people;</span>
-<span class="cstat-no" title="statement not covered" >                    logger.success('got some people');</span>
+        function getPeople() {
+            dataservice.getPeople()
+                .then(function(people) {
+                    vm.people = people;
+                    logger.success('got some people');
                 });
         }
 &nbsp;
@@ -153,7 +153,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 01 2015 16:42:45 GMT-0700 (Mountain Standard Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 01 2015 16:53:54 GMT-0700 (Mountain Standard Time)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>
