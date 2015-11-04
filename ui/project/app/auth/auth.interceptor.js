@@ -53,8 +53,7 @@
         }      
 
         function retryHttpRequest(config, deferred) {
-            var $http;
-            $http = $injector.get('$http');
+            var $http = $injector.get('$http');
             $http(config).then(function (response) {
                 deferred.resolve(response);
                 cfpLoadingBar.complete();

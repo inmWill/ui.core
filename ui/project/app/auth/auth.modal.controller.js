@@ -47,6 +47,8 @@
                         vm.credentials.username = newAccount.Username;
                         vm.credentials.password = newAccount.Password;
                         vm.login(vm.credentials);
+                    } else {
+                        logger.warning('Registration Failed');
                     }
                 })
                 .catch(function (error) {

@@ -32,20 +32,5 @@
         $rootScope.$on(AUTH_EVENTS.logoutSuccess, function () {
             activate();
         });
-
-        //function getCurrentUser() {
-        //    accountService.getCurrentUser()
-        //        .then(function (account) {
-        //            vm.currentUser = account;
-        //            logger.success('Got the user account');
-        //        });
-        //}
-
-        //vm.update = function (user) {
-        //    accountService.updateCurrentUser(vm.currentUser).then(function (results) {
-        //        logger.success('Account Updated');
-        //        vm.message = 'Account Updated';
-        //    });
-        //};
     }
 })();
