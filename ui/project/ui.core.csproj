@@ -77,6 +77,7 @@
     <Content Include="app\account\account.html" />
     <Content Include="app\animation\animation.module.js" />
     <Content Include="app\animation\form-line.directive.js" />
+    <Content Include="app\auth\auth.login.directive.js" />
     <Content Include="app\auth\auth.modal.controller.js" />
     <Content Include="app\auth\auth.logout.directive.js" />
     <Content Include="app\auth\auth.interceptor.js" />
@@ -2393,6 +2394,7 @@
     <Content Include="images\Mocks\profile\8.jpg" />
     <Content Include="images\Mocks\profile\9.jpg" />
     <Content Include="images\Mocks\profile\profile-pic-2.jpg" />
+    <Content Include="images\Mocks\profile\profile-pic-3.jpg" />
     <Content Include="images\Mocks\profile\profile-pic.jpg" />
     <Content Include="karma.conf.js" />
     <Content Include="node_modules\chai\chai.js" />

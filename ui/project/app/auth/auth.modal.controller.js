@@ -16,7 +16,8 @@
             password: ''
         };
         vm.UsernameAvailable = true;
-
+        vm.EmailAvailable = true;
+        vm.PasswordValidated = true;
 
         vm.cancel = function () {
             $uibModalInstance.dismiss('cancel');
@@ -41,18 +42,26 @@
         };
 
         vm.register = function (newAccount) {
+            vm.EmailAvailable = true;
+            vm.PasswordValidated = true;
             authService.register(newAccount)
                 .then(function (result) {
                     if (result) {
                         vm.credentials.username = newAccount.Username;
-                        vm.credentials.password = newAccount.Password;
+                        vm.credentials.password = newAccount.password;
                         vm.login(vm.credentials);
                     } else {
                         logger.warning('Registration Failed');
                     }
                 })
                 .catch(function (error) {
-                    logger.warning('Registration Failed: ' + error);
+                    logger.warning('Registration Failed: ' + error.data.Message);
+                    if (error.data.Message.indexOf('Email') !== -1) {
+                        vm.EmailAvailable = false;
+                    }
+                    if (error.data.Message.indexOf('Password') !== -1) {
+                        vm.PasswordValidated = false;
+                    }
                     vm.result = 'Registration Error';
                 });
         };

@@ -42,7 +42,7 @@
         }
 
         vm.update = function (user) {
-            accountService.updateCurrentUser(user).then(function (results) {
+            accountService.updateCurrentUser(user).then(function () {
                 logger.success('Account Updated');
                 vm.message = 'Account Updated';
             });

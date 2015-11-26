@@ -66,12 +66,12 @@
 
             localStorageService.remove('authorizationData');
             user.authorized = false;
-            user.userName = '';
+            user.username = '';
             user.displayName = '';
             user.role = [];
             user.token = '';
             user.refreshToken = '';
-            $rootScope.currentUser = user;
+            $rootScope.currentUser = undefined;
             $rootScope.$broadcast(AUTH_EVENTS.logoutSuccess);
             return true;
         }
@@ -135,8 +135,6 @@
                 }
             } catch (ex) { /* Silently fail..*/ }
         }
-
-      //  readStoredUser();
 
         function openLoginModal() {
             var instance = $uibModal.open({

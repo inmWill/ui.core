@@ -10,14 +10,24 @@
     function CurrentUserController($rootScope, AUTH_EVENTS) {
         var vm = this;
         vm.displayName = '';
+        vm.displayImage = '../../images/Mocks/profile/anon.jpg';
 
-       
 
         activate();
 
         function activate() {
             if ($rootScope.currentUser !== undefined) {
-                vm.displayName = $rootScope.currentUser.displayName;
+                if ($rootScope.currentUser.authorized !== false) {
+                    vm.displayName = $rootScope.currentUser.displayName;
+                    vm.displayImage = '../../images/Mocks/profile/2.jpg';
+                }
+                else {
+                    vm.displayName = '';
+                    vm.displayImage = '../../images/Mocks/profile/anon.jpg';
+                }
+            } else {
+                vm.displayName = '';
+                vm.displayImage = '../../images/Mocks/profile/anon.jpg';
             }
         }
 

@@ -9,7 +9,7 @@
     /* @ngInject */
     function accountService($http, $q, $rootScope, exception, logger, APP_CONFIG, AUTH_EVENTS, localStorageService) {
         var serviceBase = APP_CONFIG.serviceURIBase;
-        var user = null;
+        //var user = null;
 
         var service = {
             getCurrentUser: getCurrentUser,
