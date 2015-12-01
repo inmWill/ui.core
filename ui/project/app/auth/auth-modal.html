@@ -65,19 +65,22 @@
                 <span ng-show="registerForm.lastname.$valid" class="zmdi zmdi-check form-control-feedback"></span>
                 <span ng-show="registerForm.lastname.$invalid && !registerForm.lastname.$pristine" class="zmdi zmdi-close form-control-feedback"></span>
             </div>
-            <div class="input-group m-b-20" ng-class="{'has-error has-feedback': !vm.PasswordValidated}">
+            <div class="input-group m-b-20" ng-class="{'has-error has-feedback': !vm.PasswordValidated, 'has-error has-feedback': registerForm.password.$invalid && !registerForm.password.$pristine, 'has-success has-feedback': registerForm.password.$valid}">
                 <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
                 <div class="fg-line">
-                    <input type="password" class="form-control" required placeholder="Password" name="password" ng-model="vm.newAccount.password">
+                    <input type="password" class="form-control" ng-minlength="6" required placeholder="Password" name="password" ng-model="vm.newAccount.password">
                 </div>
                 <span ng-show="!vm.PasswordValidated" class="zmdi zmdi-close form-control-feedback"></span>
+                <span ng-show="registerForm.password.$valid" class="zmdi zmdi-check form-control-feedback"></span>
+                <span ng-show="registerForm.password.$invalid && !registerForm.password.$pristine" class="zmdi zmdi-close form-control-feedback"></span>
                 <!--<span ng-show="vm.passStrength < 30">Weak</span>
                 <span ng-show="vm.passStrength < 50">Medium</span>-->
             </div>
-            <div ng-show="!vm.PasswordValidated" class="text-danger error-spacer">Sorry that Password does not meet the minimum requirements. (NYI)</div>
+            <div ng-show="!vm.PasswordValidated" class="text-danger error-spacer">Sorry that Password does not meet the minimum requirements.</div>
+            <div ng-show="registerForm.password.$invalid && !registerForm.password.$pristine" class="text-danger error-spacer">Password must be at least 6 characters long.</div>
             <div class="clearfix"></div>
             <div class="modal-footer">
-                <button class="btn btn-link" type="button" ng-click="vm.showBlock = 1">Login</button> <button class="btn btn-primary" ng-disabled="registerForm.$invalid && !vm.UsernameAvailable" type="submit">Register</button>
+                <button class="btn btn-link" type="button" ng-click="vm.showBlock = 1">Login</button> <button class="btn btn-primary" ng-disabled="registerForm.$invalid || !vm.UsernameAvailable" type="submit">Register</button>
             </div>
         </form>
     </div>

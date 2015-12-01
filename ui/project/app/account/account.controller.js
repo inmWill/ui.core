@@ -45,6 +45,7 @@
             accountService.updateCurrentUser(user).then(function () {
                 logger.success('Account Updated');
                 vm.message = 'Account Updated';
+                vm.editAccount = 0;
             });
         };
     }
