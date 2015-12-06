@@ -15,10 +15,10 @@
 <div class="header low">
     <h1>Code coverage report for <span class="entity">./app/auth/auth.modal.controller.js</span></h1>
     <h2>
-        Statements: <span class="metric">11.76% <small>(4 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">0% <small>(0 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">9.52% <small>(4 / 42)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Functions: <span class="metric">8.33% <small>(1 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">11.76% <small>(4 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">9.52% <small>(4 / 42)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/auth/</a> &#187; auth.modal.controller.js</div>
@@ -99,7 +99,16 @@
 72
 73
 74
-75</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -117,6 +126,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -126,10 +140,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -143,17 +153,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,7 +209,8 @@
             password: ''
         };
 <span class="cstat-no" title="statement not covered" >        vm.UsernameAvailable = true;</span>
-&nbsp;
+<span class="cstat-no" title="statement not covered" >        vm.EmailAvailable = true;</span>
+<span class="cstat-no" title="statement not covered" >        vm.PasswordValidated = true;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        vm.cancel = <span class="fstat-no" title="function not covered" >function () {</span></span>
 <span class="cstat-no" title="statement not covered" >            $uibModalInstance.dismiss('cancel');</span>
@@ -216,18 +235,26 @@
         };
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        vm.register = <span class="fstat-no" title="function not covered" >function (newAccount) {</span></span>
+<span class="cstat-no" title="statement not covered" >            vm.EmailAvailable = true;</span>
+<span class="cstat-no" title="statement not covered" >            vm.PasswordValidated = true;</span>
 <span class="cstat-no" title="statement not covered" >            authService.register(newAccount)</span>
                 .then(<span class="fstat-no" title="function not covered" >function (result) {</span>
 <span class="cstat-no" title="statement not covered" >                    if (result) {</span>
 <span class="cstat-no" title="statement not covered" >                        vm.credentials.username = newAccount.Username;</span>
-<span class="cstat-no" title="statement not covered" >                        vm.credentials.password = newAccount.Password;</span>
+<span class="cstat-no" title="statement not covered" >                        vm.credentials.password = newAccount.password;</span>
 <span class="cstat-no" title="statement not covered" >                        vm.login(vm.credentials);</span>
                     } else {
 <span class="cstat-no" title="statement not covered" >                        logger.warning('Registration Failed');</span>
                     }
                 })
                 .catch(<span class="fstat-no" title="function not covered" >function (error) {</span>
-<span class="cstat-no" title="statement not covered" >                    logger.warning('Registration Failed: ' + error);</span>
+<span class="cstat-no" title="statement not covered" >                    logger.warning('Registration Failed: ' + error.data.Message);</span>
+<span class="cstat-no" title="statement not covered" >                    if (error.data.Message.indexOf('Email') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >                        vm.EmailAvailable = false;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    if (error.data.Message.indexOf('Password') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >                        vm.PasswordValidated = false;</span>
+                    }
 <span class="cstat-no" title="statement not covered" >                    vm.result = 'Registration Error';</span>
                 });
         };
@@ -252,7 +279,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 15 2015 12:26:19 GMT-0700 (Mountain Standard Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Dec 05 2015 00:04:01 GMT-0700 (Mountain Standard Time)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>
