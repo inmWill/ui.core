@@ -6,15 +6,16 @@
         .module('blocks.router')
         .provider('routerHelper', routerHelperProvider);
 
-    routerHelperProvider.$inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider'];
+    routerHelperProvider.$inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider', '$compileProvider'];
     /* @ngInject */
-    function routerHelperProvider($locationProvider, $stateProvider, $urlRouterProvider) {
+    function routerHelperProvider($locationProvider, $stateProvider, $urlRouterProvider, $compileProvider) {
         /* jshint validthis:true */
         var config = {
             docTitle: undefined,
             resolveAlways: {}
         };
 
+        $compileProvider.imgSrcSanitizationWhitelist('images/');
         $locationProvider.html5Mode(true);
 
         this.configure = function (cfg) {

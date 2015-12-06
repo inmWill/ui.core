@@ -6,7 +6,7 @@
         .controller('AuthModalController', AuthModalController);
 
     AuthModalController.$inject = ['$rootScope', 'authService', '$uibModalInstance', 'logger', 'AUTH_EVENTS'];
-
+    /* @ngInject */
     function AuthModalController($rootScope, authService, $uibModalInstance, logger, AUTH_EVENTS) {
         /* jshint validthis:true */
         var vm = this;

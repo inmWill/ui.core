@@ -5,7 +5,7 @@
         .module('app.animation')
         .directive('fgLine', fgLine);
 
-    fgLine.$inject = ['$window'];
+    //fgLine.$inject = ['$window'];
 
     function fgLine() {
         // Usage:

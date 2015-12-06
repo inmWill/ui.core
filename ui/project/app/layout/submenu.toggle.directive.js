@@ -6,7 +6,7 @@
         .directive('toggleSubmenu', toggleSubmenu);
 
     toggleSubmenu.$inject = ['$window'];
-    
+    /* @ngInject */
     function toggleSubmenu($window) {
         // Usage:
         //     <submenu></submenu>

@@ -138,7 +138,7 @@
 
         function openLoginModal() {
             var instance = $uibModal.open({
-                templateUrl: '/app/auth/auth-modal.html',
+                templateUrl: 'app/auth/auth-modal.html',
                 controller: 'AuthModalController',
                 controllerAs: 'vm',
                 backdrop: 'static'

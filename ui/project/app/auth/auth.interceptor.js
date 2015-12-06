@@ -5,7 +5,7 @@
         .factory('authInterceptorService', authInterceptorService);
 
     authInterceptorService.$inject = ['$q', '$injector', '$location', '$rootScope', 'localStorageService', 'cfpLoadingBar'];
-
+    /* @ngInject */
     function authInterceptorService($q, $injector, $location, $rootScope, localStorageService, cfpLoadingBar) {
 
         var factory = {
