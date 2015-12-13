@@ -3422,12 +3422,6 @@
     <Content Include="node_modules\mocha\node_modules\supports-color\index.js" />
     <Content Include="node_modules\sinon-chai\lib\sinon-chai.js" />
     <Content Include="node_modules\sinon-chai\LICENSE.txt" />
-    <Content Include="report\coverage\report-html\base.css" />
-    <Content Include="report\coverage\report-html\index.html" />
-    <Content Include="report\coverage\report-html\prettify.css" />
-    <Content Include="report\coverage\report-html\prettify.js" />
-    <Content Include="report\coverage\report-html\sort-arrow-sprite.png" />
-    <Content Include="report\coverage\report-html\sorter.js" />
     <Content Include="bower.json" />
     <Content Include="bower_components\angular-animate\.bower.json" />
     <Content Include="bower_components\angular-animate\angular-animate.min.js.map" />
@@ -4647,6 +4641,7 @@
   <ItemGroup>
     <Folder Include="build\js\" />
     <Folder Include="build\styles\" />
+    <Folder Include="report\coverage\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="bower_components\angular-ui-router\api\angular-ui-router.d.ts" />
