@@ -22,6 +22,7 @@
                     controllerAs: 'vm',
                     title: 'Admin',
                     settings: {
+                        requireAuth: true,
                         nav: 2,
                         content: '<i class="fa fa-lock"></i> Admin'
                     }

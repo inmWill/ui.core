@@ -5,6 +5,6 @@
         .module('app.core', [
             'ngAnimate', 'ngSanitize',
             'blocks.exception', 'blocks.logger', 'blocks.router', 'LocalStorageModule',
-            'ui.router', 'ui.bootstrap', 'angular-loading-bar', 'satellizer'
+            'ui.router', 'ui.bootstrap', 'angular-loading-bar'
         ]);
 })();

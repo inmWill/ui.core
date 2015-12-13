@@ -1,0 +1,10 @@
+﻿<div class="profile-pic">
+    <img src="{{vm.displayImage}}" alt="{{vm.displayName}}" />
+</div>
+<div class="profile-info">
+    <div>
+        <div ng-show="vm.displayName !== ''">{{vm.displayName}}</div>
+        <div ng-show="vm.displayName === ''"><auth-login></auth-login></div>
+    </div>
+    <i class="zmdi zmdi-caret-down"></i>
+</div>

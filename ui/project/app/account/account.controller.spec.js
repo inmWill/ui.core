@@ -10,6 +10,7 @@ describe('AccountController', function() {
 
     beforeEach(function () {
         sinon.stub(accountService, 'getCurrentUser').returns($q.when(mockUser));
+        sinon.stub(accountService, 'updateCurrentUser').returns($q.when(true));
         controller = $controller('AccountController');
         $rootScope.$apply();
     });
@@ -20,6 +21,19 @@ describe('AccountController', function() {
         it('should be created successfully', function () {
             expect(controller).to.be.defined;
         });
+
+        describe('after activate', function () {
+            it('should have title of "Account"', function () {
+                expect(controller.title).to.equal('User Account');
+            });
+
+            it('should have logged "Activated"', function () {
+                expect($log.info.logs).to.match(/Activated/);
+            });
+
+            it('should have a user account', function () {
+                expect(controller.currentUser).to.exist;
+            });
 
         describe('user account properties', function () {
             it('should have a username', function () {
@@ -38,11 +52,11 @@ describe('AccountController', function() {
                 expect(controller.currentUser.Email).to.not.be.empty;
             });
 
-            it('should have be enabledable', function () {
+            it('should be able to be enabled', function () {
                 expect(controller.currentUser.Enabled).to.exist;
             });
 
-            it('should have be authorizable', function () {
+            it('should be authorizable', function () {
                 expect(controller.currentUser.Authorized).to.exist;
             });
 
@@ -52,18 +66,13 @@ describe('AccountController', function() {
 
         });
 
-        describe('after activate', function() {
-            it('should have title of "Account"', function() {
-                expect(controller.title).to.equal('User Account');
+        describe('after account is updated successfully', function () {
+            it('should have a success message', function () {
+                controller.update(controller.currentUser);
+                $rootScope.$apply();
+                expect(controller.message).to.equal('Account Updated');
             });
-
-            it('should have logged "Activated"', function() {
-                expect($log.info.logs).to.match(/Activated/);
-            });
-
-            it('should have a user account', function () {
-                expect(controller.currentUser).to.exist;
-            });
+        });
 
 
             //it()

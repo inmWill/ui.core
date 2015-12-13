@@ -5,24 +5,30 @@
         .module('app.auth')
         .factory('authService', authService);
 
-    authService.$inject = ['$http', '$q', 'exception', 'logger', 'APP_CONFIG', 'localStorageService'];
+    authService.$inject = ['$http', '$q', '$rootScope', '$uibModal', 'exception', 'logger', 'APP_CONFIG', 'localStorageService', 'AUTH_EVENTS'];
     /* @ngInject */
-    function authService($http, $q, exception, logger, APP_CONFIG, localStorageService) {
+    function authService($http, $q, $rootScope, $uibModal, exception, logger, APP_CONFIG, localStorageService, AUTH_EVENTS) {
         var baseUrl = APP_CONFIG.serviceURIBase;
         var isRegistered = APP_CONFIG.isRegistered;
-
-        var user = {};
 
         var service = {
             login: login,
             logout: logout,
+            register: register,
             refreshUserToken: refreshUserToken,
-            currentUser: currentUser
+            currentUser: currentUser,
+            openLoginModal: openLoginModal,
+            checkUsername: checkUsername
         };
-        return service;
 
-
-
+        var user = {
+            authorized: false,
+            username: '',
+            displayName: '',
+            role: '',
+            token: '',
+            refreshToken: ''
+        };
 
         function login(credentials) {
 
@@ -36,15 +42,18 @@
             var deferred = $q.defer();
             $http.post(baseUrl + 'token', data, {
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-                }).success(function (response) {
-                    user.authorized = true;
-                    user.username = credentials.username;
-                    user.role = response.userRoles;
-                    user.token = response.access_token;
-                    user.refreshToken = response.refresh_token;
-                    localStorageService.set('authorizationData', user);
-                    deferred.resolve(response);
-                }).error(function (err) {
+            }).success(function (response) {
+                user.authorized = true;
+                user.username = response.userName;
+                user.displayName = response.displayName;
+                user.role = response.userRoles;
+                user.token = response.access_token;
+                user.refreshToken = response.refresh_token;
+                $rootScope.currentUser = user;
+                localStorageService.set('authorizationData', user);
+                $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
+                deferred.resolve(response);
+            }).error(function (err) {
                 logout();
                 deferred.reject(err);
             });
@@ -56,10 +65,23 @@
         function logout() {
 
             localStorageService.remove('authorizationData');
-            //authSession.clearUserData();
-            currentUser.authorized = false;
-            currentUser.username = '';
+            user.authorized = false;
+            user.username = '';
+            user.displayName = '';
+            user.role = [];
+            user.token = '';
+            user.refreshToken = '';
+            $rootScope.currentUser = undefined;
+            $rootScope.$broadcast(AUTH_EVENTS.logoutSuccess);
             return true;
+        }
+
+        function register(newAccount) {
+
+            return $http.post(baseUrl + 'api/account/Register', newAccount).then(function (response) {
+                return response;
+            });
+
         }
 
         function refreshUserToken() {
@@ -69,23 +91,26 @@
 
             if (authData) {
 
-                var data = 'grant_type=refresh_token&refresh_token=' + authData.refreshToken + '&client_id=' + APP_CONFIG.authClientId;
+                var data = 'grant_type=refresh_token&refresh_token=' + authData.refreshToken + '&client_id=' + APP_CONFIG.clientId;
 
                 localStorageService.remove('authorizationData');
 
                 $http.post(baseUrl + 'token', data, {
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-                    }).success(function (response) {
-                        user.authorized = true;
-                        user.username = response.userName;
-                        user.role = response.userRoles;
-                        user.token = response.access_token;
-                        user.refreshToken = response.refresh_token;
-                        localStorageService.set('authorizationData', user);
-                        deferred.resolve(response);
-                    }).error(function (err) {
-                        logout();
-                        deferred.reject(err);
+                }).success(function (response) {
+                    user.authorized = true;
+                    user.username = response.userName;
+                    user.displayName = response.displayName;
+                    user.role = response.userRoles;
+                    user.token = response.access_token;
+                    user.refreshToken = response.refresh_token;
+                    $rootScope.currentUser = user;
+                    localStorageService.set('authorizationData', user);
+                    $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
+                    deferred.resolve(response);
+                }).error(function (err) {
+                    logout();
+                    deferred.reject(err);
                 });
             } else {
                 deferred.reject();
@@ -95,23 +120,44 @@
         }
 
         function currentUser() {
-            if (!user) {
+            if (!user.authorized) {
                 readStoredUser();
             }
             return user;
         }
 
         function readStoredUser() {
-            //Try to read in from localStorage if one exists
             var storedUser = localStorageService.get('authorizationData');
             try {
                 if (storedUser) {
-                    // Note: Using a simple user model here
                     user = storedUser;
+                    $rootScope.currentUser = user;
                 }
             } catch (ex) { /* Silently fail..*/ }
         }
 
-        readStoredUser();
+        function openLoginModal() {
+            var instance = $uibModal.open({
+                templateUrl: 'app/auth/auth-modal.html',
+                controller: 'AuthModalController',
+                controllerAs: 'vm',
+                backdrop: 'static'
+            });
+
+            return instance.result.then(function (credentials) {
+                logger.info('On your way');
+                return true;
+            });
+        }
+
+        function checkUsername(username) {
+
+            return $http.get(baseUrl + 'api/account/UsernameAvailable?username='+ username).then(function (response) {
+                return response;
+            });
+
+        }
+
+        return service;
     }
 })();

@@ -61,7 +61,6 @@
     <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/waves/dist/waves.min.js"></script>
-    <script src="bower_components/satellizer/satellizer.js"></script>
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
     <script src="bower_components/sinon/index.js"></script>
     <script src="bower_components/bardjs/dist/bard.js"></script>
@@ -72,6 +71,7 @@
     <script src="/app/app.module.js"></script>
     <script src="/app/account/account.module.js"></script>
     <script src="/app/admin/admin.module.js"></script>
+    <script src="/app/animation/animation.module.js"></script>
     <script src="/app/auth/auth.module.js"></script>
     <script src="/app/blocks/exception/exception.module.js"></script>
     <script src="/app/blocks/logger/logger.module.js"></script>
@@ -82,15 +82,18 @@
     <script src="/app/people/people.module.js"></script>
     <script src="/app/widgets/widgets.module.js"></script>
     <script src="/app/account/account.controller.js"></script>
+    <script src="/app/account/account.current-user.controller.js"></script>
+    <script src="/app/account/account.current-user.directive.js"></script>
     <script src="/app/account/account.route.js"></script>
     <script src="/app/account/account.service.js"></script>
     <script src="/app/admin/admin.controller.js"></script>
     <script src="/app/admin/admin.route.js"></script>
+    <script src="/app/animation/form-line.directive.js"></script>
     <script src="/app/auth/auth.config.js"></script>
-    <script src="/app/auth/auth.controller.js"></script>
-    <script src="/app/auth/auth.directive.js"></script>
     <script src="/app/auth/auth.interceptor.js"></script>
-    <script src="/app/auth/auth.route.js"></script>
+    <script src="/app/auth/auth.login.directive.js"></script>
+    <script src="/app/auth/auth.logout.directive.js"></script>
+    <script src="/app/auth/auth.modal.controller.js"></script>
     <script src="/app/auth/auth.service.js"></script>
     <script src="/app/blocks/exception/exception-handler.provider.js"></script>
     <script src="/app/blocks/exception/exception.js"></script>
@@ -106,6 +109,7 @@
     <script src="/app/layout/ht-top-nav.directive.js"></script>
     <script src="/app/layout/shell.controller.js"></script>
     <script src="/app/layout/sidebar.controller.js"></script>
+    <script src="/app/layout/submenu.toggle.directive.js"></script>
     <script src="/app/people/people.controller.js"></script>
     <script src="/app/people/people.route.js"></script>
     <script src="/app/widgets/ht-img-person.directive.js"></script>
@@ -123,10 +127,6 @@
     <script src="/app/admin/admin.controller.spec.js"></script>
 
     <script src="/app/admin/admin.route.spec.js"></script>
-
-    <script src="/app/auth/auth.controller.spec.js"></script>
-
-    <script src="/app/auth/auth.route.spec.js"></script>
 
     <script src="/app/blocks/exception/exception-handler.provider.spec.js"></script>
 

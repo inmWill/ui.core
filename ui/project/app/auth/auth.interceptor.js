@@ -5,7 +5,7 @@
         .factory('authInterceptorService', authInterceptorService);
 
     authInterceptorService.$inject = ['$q', '$injector', '$location', '$rootScope', 'localStorageService', 'cfpLoadingBar'];
-
+    /* @ngInject */
     function authInterceptorService($q, $injector, $location, $rootScope, localStorageService, cfpLoadingBar) {
 
         var factory = {
@@ -35,7 +35,7 @@
                 function () {
                     localStorageService.remove('authorizationData');
                     localStorageService.remove('userData');
-                    $location.path('/login');
+                    $location.path('/');
                     cfpLoadingBar.complete();
                 });
             }
@@ -48,17 +48,19 @@
                 deferred.reject(rejection);
                 cfpLoadingBar.complete();
             }
+            cfpLoadingBar.complete();
             return deferred.promise;
-        }
+        }      
 
         function retryHttpRequest(config, deferred) {
-            var $http;
-            $http = $injector.get('$http');
+            var $http = $injector.get('$http');
             $http(config).then(function (response) {
                 deferred.resolve(response);
+                cfpLoadingBar.complete();
             },
             function (response) {
                 deferred.reject(response);
+                cfpLoadingBar.complete();
             });
         }
 

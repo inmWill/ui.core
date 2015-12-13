@@ -1,59 +1,215 @@
 <div class="block-header">
-    <h2>{{vm.title}}</h2>
-
-    <ul class="actions">
-        <li class="dropdown" uib-dropdown>
-            <a href="" uib-dropdown-toggle>
-                <i class="zmdi zmdi-more-vert"></i>
-            </a>
-
-            <ul class="dropdown-menu dropdown-menu-right">
-                <li>
-                    <a href="">Refresh</a>
-                </li>
-                <li>
-                    <a href="">Manage Widgets</a>
-                </li>
-                <li>
-                    <a href="">Widgets Settings</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-
+    <h2>{{vm.currentUser.Firstname}} {{vm.currentUser.Lastname}} <small>Active User</small></h2>
 </div>
-<div class="card">
-    <div class="card-header">
-        <h2>Mock User</h2>
 
-        <ul class="actions">
-            <li class="dropdown action-show" uib-dropdown>
-                <a href="" uib-dropdown-toggle>
-                    <i class="zmdi zmdi-more-vert"></i>
-                </a>
+<div class="card" id="profile-main">
+    <div class="pm-overview c-overflow">
+        <div class="pmo-pic">
+            <div class="p-relative">
+                    <img class="img-responsive" src="/images/Mocks/profile/profile-pic-3.jpg" alt="">
+            </div>
 
-                <div class="dropdown-menu pull-right">
-                    <p class="p-20">
-                        You can put anything here
+
+            <div class="pmo-stat">
+                <h2 class="m-0 c-white">89234</h2>
+                Meaningless Number
+            </div>
+        </div>
+
+        <div class="pmo-block pmo-contact hidden-xs">
+            <h2>Contact</h2>
+
+            <ul>
+                <li><i class="zmdi zmdi-email"></i> {{vm.currentUser.Email}}</li>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <div class="pm-body clearfix">
+
+        <div class="pmb-block">
+            <div class="pmbb-header">
+                <h2><i class="zmdi zmdi-account m-r-5"></i> User Account</h2>
+
+                <ul class="actions" data-ng-if="vm.editAccount === 0">
+                    <li class="dropdown" uib-dropdown>
+                        <a href="" uib-dropdown-toggle>
+                            <i class="zmdi zmdi-more-vert"></i>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a data-ng-click="vm.editAccount = 1" href="">Edit</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="pmbb-body p-l-30">
+                <div class="pmbb-view" data-ng-if="vm.editAccount === 0">
+                    <dl class="dl-horizontal">
+                        <dt>First Name</dt>
+                        <dd>{{ vm.currentUser.Firstname }}</dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Last Name</dt>
+                        <dd>{{ vm.currentUser.Lastname }}</dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>User Name</dt>
+                        <dd>{{ vm.currentUser.Username }}</dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Email</dt>
+                        <dd>{{ vm.currentUser.Email }}</dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Roles</dt>
+                        <dd>
+                            <ul>
+                                <li ng-repeat="role in vm.currentUser.Roles">
+                                    {{role}}
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+
+                <form data-ng-submit="vm.update(vm.currentUser)" class="pmbb-edit" name="userProfileForm" data-ng-if="vm.editAccount === 1">
+                    <dl class="dl-horizontal">
+                        <dt class="p-t-10">First Name</dt>
+                        <dd>
+                            <div class="fg-line">
+                                <input type="text" required ng-maxlength="150" data-ng-model="vm.currentUser.Firstname" name="firstname" class="form-control">
+                            </div>
+
+                        </dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt class="p-t-10">Last Name</dt>
+                        <dd>
+                            <div class="fg-line">
+                                <input type="text" required ng-maxlength="150" data-ng-model="vm.currentUser.Lastname" name="lastname" class="form-control">
+                            </div>
+
+                        </dd>
+                    </dl>
+                    
+                    <div class="m-t-30">
+                        <button class="btn btn-primary btn-sm" type="submit" ng-disabled="vm.working || userProfileForm.$invalid">
+                            <span ng-show="vm.working">Saving <i class="fa fa-spinner fa-pulse"></i></span>
+                            <span ng-show="!vm.working">Save</span>
+                        </button>
+                        <button class="btn btn-link btn-sm" data-ng-click="vm.editAccount = 0">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="card">
+
+
+    <div class="card-body card-padding" ng-cloak>
+        <form class="form-horizontal" name="userProfileForm">
+
+            <!-- First Name -->
+            <!--<div class="form-group" ng-class="{'has-error': userProfileForm.firstname.$invalid}">
+                <label class="control-label col-sm-3">First Name</label>
+                <div class="col-sm-5">
+                    <input type="text" required ng-maxlength="150" ng-model="vm.currentUser.Firstname" name="firstname" class="form-control">
+                    <p class="help-block" ng-show="userProfileForm.firstname.$invalid">
+                        Your First Name is required and has a max length of 150.
                     </p>
                 </div>
-            </li>
-        </ul>
-    </div>
+                <div class="col-sm-4">
+                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover-trigger="mouseenter" uib-popover="Please enter your given name."></i>
+                </div>
+            </div>-->
 
-    <div class="card-body card-padding">
-        <p>UserName: {{vm.currentUser.Username}}</p>
-        <p>FirstName: {{vm.currentUser.Firstname}}</p>
-        <p>LastName: {{vm.currentUser.Lastname}}</p>
-        <p>Email: {{vm.currentUser.Email}}</p>
-        <p>Enabled: {{vm.currentUser.Enabled}}</p>
-        <p>
-            Roles:
-            <ul>
-                <li ng-repeat="role in vm.currentUser.Roles">
-                    {{role}}
-                </li>
-            </ul>
-        </p>
+            <!-- Last Name -->
+            <!--<div class="form-group" ng-class="{'has-error': userProfileForm.lastname.$invalid}">
+                <label class="control-label col-sm-3">Last Name</label>
+                <div class="col-sm-5">
+                    <input type="text" required ng-maxlength="150" ng-model="vm.currentUser.Lastname" name="lastname" class="form-control">
+                    <p class="help-block" ng-show="userProfileForm.lastname.$invalid">
+                        Employee's Last Name is required and has a max length of 150.
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover-trigger="mouseenter" uib-popover="Please enter your family name."></i>
+                </div>
+            </div>-->
+
+            <!-- Email -->
+            <!--<div class="form-group" ng-class="{'has-error': userProfileForm.email.$invalid}">
+                <label class="control-label col-sm-3">Email</label>
+                <div class="col-sm-5">
+                    <input type="text" required ng-maxlength="250" ng-model="vm.currentUser.Email" name="email" class="form-control">
+                    <p class="help-block" ng-show="userProfileForm.email.$invalid">
+                        Employee's Company Email is required and must be less than 250 characters.
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover-trigger="mouseenter" uib-popover="Please enter your company email."></i>
+                </div>
+            </div>-->
+
+            <!-- Account Status -->
+            <!--<div class="form-group" ng-class="{'has-error': userProfileForm.enabled.$invalid}">
+                <label class="control-label col-sm-3">Enabled</label>
+                <div class="col-sm-5">
+                    <input type="checkbox" ng-disabled="true" ng-model="vm.currentUser.Enabled" name="enabled" class="checkbox">
+                    <p class="help-block" ng-show="userProfileForm.enabled.$invalid">
+                        Required
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover-trigger="mouseenter" uib-popover="Account status."></i>
+                </div>
+            </div>-->
+
+            <!-- Account Roles -->
+            <!--<div class="form-group" ng-class="{'has-error': userProfileForm.enabled.$invalid}">
+                <label class="control-label col-sm-3">Roles</label>
+                <div class="col-sm-5">
+                    <ul>
+                        <li ng-repeat="role in vm.currentUser.Roles">
+                            {{role}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <i class="fa fa-question-circle text-info mouse-pointer fa-lg" popover-placement="right" popover-trigger="mouseenter" uib-popover="your roles."></i>
+                </div>
+            </div>
+            <div class="pull-right">
+                <button id="btnUpdate" class="btn btn-primary" data-ng-click="vm.update(vm.profile)" type="submit" ng-disabled="vm.working || userProfileForm.$invalid">
+                    <span ng-show="vm.working">Updating <i class="fa fa-spinner fa-pulse"></i></span>
+                    <span ng-show="!vm.working">Update <i class="fa fa-arrow-right"></i></span>
+                </button>
+            </div>
+            <div id="statusAlert" data-ng-hide="vm.message == ''" data-ng-class="(vm.message) ? 'alert alert-success' : 'alert alert-danger'">
+                {{vm.message}}
+            </div>
+        </form>
     </div>
-</div>
+</div>-->

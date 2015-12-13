@@ -1,13 +1,15 @@
 /* jshint -W117, -W030 */
 describe('AdminController', function() {
     var controller;
+    var token = mockData.getMockToken();
 
     beforeEach(function() {
         bard.appModule('app.admin');
-        bard.inject('$controller', '$log', '$rootScope');
+        bard.inject('$controller', '$q', '$log', '$rootScope', 'authService');
     });
 
     beforeEach(function () {
+        sinon.stub(authService, 'currentUser').returns(token);
         controller = $controller('AdminController');
         $rootScope.$apply();
     });

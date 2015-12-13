@@ -47,16 +47,16 @@
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
-                    <th>DOB</th>
-                    <th>Last 4</th>
+                    <th>Age</th>
+                    <th>Location</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="p in vm.people">
-                    <td>{{p.FirstName}}</td>
-                    <td>{{p.LastName}}</td>
-                    <td>{{p.DateOfBirth | date: 'short'}}</td>
-                    <td>{{p.LastSSN}}</td>
+                    <td>{{p.firstName}}</td>
+                    <td>{{p.lastName}}</td>
+                    <td>{{p.age}}</td>
+                    <td>{{p.location}}</td>
                 </tr>
             </tbody>
         </table>

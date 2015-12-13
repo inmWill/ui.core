@@ -30,8 +30,8 @@
             height: 129px;
             margin-bottom: 5px;
             width: 100%;
-            background: url(../../images/mocks/profile-menu.png) no-repeat left top;
-            background-size: 100%;
+            /*background: url(../../images/mocks/profile-menu.png) no-repeat left top;
+            background-size: 100%;*/
             
             .profile-pic {
                 padding: 12px; 
@@ -197,13 +197,13 @@
  * Full width layout
  */
 body {
-    &:not(.sw-toggled) {
+    &:not(.side-menu) {
         #sidebar {
             box-shadow: 0 0 10px rgba(51, 51, 51, 0.38);
         }
     }
     
-    &.sw-toggled {
+    &.side-menu {
         #sidebar {
             @media (min-width: @screen-lg-min) {
                 .translate3d(0, 0, 0) !important;
@@ -222,13 +222,13 @@ body {
  * For Stupid IE9
  */
 .ie9 {
-    body.sw-toggled #sidebar {
+    body.side-menu #sidebar {
         @media (min-width: @screen-lg-min) {
             display: block;
         }
     }
      
-    body:not(.sw-toggled) {
+    body:not(.side-menu) {
          #sidebar:not(.toggled) {
             display: none; 
         }

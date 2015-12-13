@@ -5,6 +5,7 @@
         .module('app.core')
         .run(appRun);
 
+    appRun.$inject = ['routerHelper'];
     /* @ngInject */
     function appRun(routerHelper) {
         var otherwise = '/404';
@@ -18,7 +19,11 @@
                 config: {
                     url: '/404',
                     templateUrl: 'app/core/404.html',
-                    title: '404'
+                    title: '404',
+                    settings: {
+                        requireAuth: false,
+                        nav: -1
+                    }
                 }
             }
         ];

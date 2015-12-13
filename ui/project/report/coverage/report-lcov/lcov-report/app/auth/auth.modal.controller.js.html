@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ./app/auth/auth.modal.controller.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">./app/auth/auth.modal.controller.js</span></h1>
+    <h2>
+        Statements: <span class="metric">9.52% <small>(4 / 42)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">8.33% <small>(1 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">9.52% <small>(4 / 42)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/auth/</a> &#187; auth.modal.controller.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿(function () {
+    'use strict';
+&nbsp;
+    angular
+        .module('app.auth')
+        .controller('AuthModalController', AuthModalController);
+&nbsp;
+    AuthModalController.$inject = ['$rootScope', 'authService', '$uibModalInstance', 'logger', 'AUTH_EVENTS'];
+    /* @ngInject */
+<span class="fstat-no" title="function not covered" >    function AuthModalController($rootScope, authService, $uibModalInstance, logger, AUTH_EVENTS) {</span>
+        /* jshint validthis:true */
+<span class="cstat-no" title="statement not covered" >        var vm = this;</span>
+<span class="cstat-no" title="statement not covered" >        vm.showBlock = 1;</span>
+<span class="cstat-no" title="statement not covered" >        vm.credentials = {</span>
+            username: '',
+            password: ''
+        };
+<span class="cstat-no" title="statement not covered" >        vm.UsernameAvailable = true;</span>
+<span class="cstat-no" title="statement not covered" >        vm.EmailAvailable = true;</span>
+<span class="cstat-no" title="statement not covered" >        vm.PasswordValidated = true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        vm.cancel = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            $uibModalInstance.dismiss('cancel');</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        vm.title = 'Login';</span>
+<span class="cstat-no" title="statement not covered" >        vm.result = 'Authorization Required';</span>
+        //vm.passStrength = 0;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        vm.login = <span class="fstat-no" title="function not covered" >function (credentials) {</span></span>
+<span class="cstat-no" title="statement not covered" >            authService.login(credentials)</span>
+                .then(<span class="fstat-no" title="function not covered" >function (token) {</span>
+<span class="cstat-no" title="statement not covered" >                    logger.success('User logged in.');</span>
+<span class="cstat-no" title="statement not covered" >                    $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);</span>
+<span class="cstat-no" title="statement not covered" >                    $uibModalInstance.close(true);</span>
+                })
+                .catch(<span class="fstat-no" title="function not covered" >function (error) {</span>
+<span class="cstat-no" title="statement not covered" >                    logger.warning('Login Failed.');</span>
+<span class="cstat-no" title="statement not covered" >                    vm.result = 'Incorrect Username or Password';</span>
+                });
+&nbsp;
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        vm.register = <span class="fstat-no" title="function not covered" >function (newAccount) {</span></span>
+<span class="cstat-no" title="statement not covered" >            vm.EmailAvailable = true;</span>
+<span class="cstat-no" title="statement not covered" >            vm.PasswordValidated = true;</span>
+<span class="cstat-no" title="statement not covered" >            authService.register(newAccount)</span>
+                .then(<span class="fstat-no" title="function not covered" >function (result) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (result) {</span>
+<span class="cstat-no" title="statement not covered" >                        vm.credentials.username = newAccount.Username;</span>
+<span class="cstat-no" title="statement not covered" >                        vm.credentials.password = newAccount.password;</span>
+<span class="cstat-no" title="statement not covered" >                        vm.login(vm.credentials);</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        logger.warning('Registration Failed');</span>
+                    }
+                })
+                .catch(<span class="fstat-no" title="function not covered" >function (error) {</span>
+<span class="cstat-no" title="statement not covered" >                    logger.warning('Registration Failed: ' + error.data.Message);</span>
+<span class="cstat-no" title="statement not covered" >                    if (error.data.Message.indexOf('Email') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >                        vm.EmailAvailable = false;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    if (error.data.Message.indexOf('Password') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >                        vm.PasswordValidated = false;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    vm.result = 'Registration Error';</span>
+                });
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        vm.checkUsername = <span class="fstat-no" title="function not covered" >function (username) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (username !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >                authService.checkUsername(username)</span>
+                    .then(<span class="fstat-no" title="function not covered" >function (result) {</span>
+<span class="cstat-no" title="statement not covered" >                        vm.UsernameAvailable = result.data;</span>
+                    })
+                    .catch(<span class="fstat-no" title="function not covered" >function (error) {</span>
+<span class="cstat-no" title="statement not covered" >                        logger.warning('Username Lookup Failed: ' + error);</span>
+<span class="cstat-no" title="statement not covered" >                        vm.result = 'Username Lookup Failed';</span>
+                    });
+            }
+        };
+&nbsp;
+    }
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Dec 12 2015 18:43:12 GMT-0700 (Mountain Standard Time)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
