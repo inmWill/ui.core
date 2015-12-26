@@ -10,7 +10,8 @@
         'app.people',
         'app.account',
         'app.auth',
-        'app.layout'
+        'app.layout',
+        'app.mywidget'
     ]);
 
 })();

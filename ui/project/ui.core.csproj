@@ -120,6 +120,11 @@
     <Content Include="app\layout\sidebar.controller.spec.js" />
     <Content Include="app\layout\sidebar.html" />
     <Content Include="app\layout\submenu.toggle.directive.js" />
+    <Content Include="app\mywidget\mywidget.service.js" />
+    <Content Include="app\mywidget\mywidget.module.js" />
+    <Content Include="app\mywidget\mywidget.route.js" />
+    <Content Include="app\mywidget\mywidget.html" />
+    <Content Include="app\mywidget\mywidget.controller.js" />
     <Content Include="app\people\people.controller.spec.js" />
     <Content Include="app\people\people.route.js" />
     <Content Include="app\people\people.controller.js" />
