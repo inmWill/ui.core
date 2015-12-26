@@ -14,9 +14,9 @@
             //notAuthorized: 'auth-not-authorized',
         })
         .constant('APP_CONFIG', {
-            clientId: 'coreAzureApp',
-      //        serviceURIBase: 'http://localhost:51517/',
-        serviceURIBase: 'http://apicore.azurewebsites.net/',
+            clientId: 'coreApp',
+              serviceURIBase: 'http://localhost:51517/',
+      //  serviceURIBase: 'http://apicore.azurewebsites.net/',
             isRegistered: true
  
         });
