@@ -14,6 +14,7 @@
         vm.title = 'User Account';
         vm.message = '';
         vm.editAccount = 0;
+        vm.editPassword = 0;
         vm.currentUser = {
             UserId: 0,
             UserName: '',
@@ -22,6 +23,11 @@
             Email: '',
             IsAuthorized: false,
             Roles: ['']
+        };
+
+        vm.updatedPassword = {
+            OldPassword: '',
+            NewPassword: ''
         };
 
         activate();
@@ -47,6 +53,15 @@
                 vm.message = 'Account Updated';
                 vm.editAccount = 0;
             });
+        };
+
+        vm.changePassword = function (changedPassword) {
+            accountService.changeCurrentUserPassword(changedPassword).then(function () {
+                logger.success('Password Changed');
+                vm.message = 'Password Changed';
+                vm.editPassword = 0;
+            })
+
         };
     }
 })();

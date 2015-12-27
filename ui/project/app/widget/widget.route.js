@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.mywidget')
+        .module('app.widget')
         .run(appRun);
 
     appRun.$inject = ['routerHelper'];
@@ -14,17 +14,17 @@
     function getStates() {
         return [
             {
-                state: 'mywidget',
+                state: 'widget',
                 config: {
-                    url: '/mywidget',
-                    templateUrl: 'app/mywidget/mywidget.html',
-                    controller: 'MywidgetController',
+                    url: '/widget',
+                    templateUrl: 'app/widget/widget.html',
+                    controller: 'WidgetController',
                     controllerAs: 'vm',
-                    title: 'my widget',
+                    title: 'widget',
                     settings: {
                         requireAuth: false,
                         nav: 4,
-                        content: '<i class="fa fa-gear"></i> My Widget'
+                        content: '<i class="fa fa-gear"></i> Widget'
                     }
                 }
             }

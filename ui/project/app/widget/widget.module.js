@@ -1,9 +1,8 @@
 (function () {
     'use strict';
 
-    angular.module('app.mywidget', [
+    angular.module('app.widget', [
         'app.core',
-        'app.widgets',
         'app.layout'
     ]);
 })();

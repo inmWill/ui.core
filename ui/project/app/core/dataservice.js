@@ -30,15 +30,6 @@
         { id: 7, firstName: 'Haley', lastName: 'Guthrie', age: 35, location: 'Wyoming' },
         { id: 8, firstName: 'Aaron', lastName: 'Jinglehiemer', age: 22, location: 'Utah' }
             ]);
-            //return $http.get(serviceBase + 'api/ClientEmployee/GetPagedClients?page=1&pagesize=20')
-            //    .then(success)
-            //    .catch(fail);
-            //function success(response) {
-            //    return response.data;
-            //}
-            //function fail(e) {
-            //    return exception.catcher('XHR Failed for getPeople')(e);
-            //}
         }
     }
 })();

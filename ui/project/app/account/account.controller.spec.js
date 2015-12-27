@@ -74,9 +74,6 @@ describe('AccountController', function() {
             });
         });
 
-
-            //it()
-
         });
        
     });

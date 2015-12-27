@@ -3,7 +3,6 @@
 
     angular.module('app.people', [
         'app.core',
-        'app.widgets',
         'app.layout'
     ]);
 })();

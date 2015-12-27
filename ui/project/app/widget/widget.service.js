@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.mywidget')
+        .module('app.widget')
         .factory('widgetService', widgetService);
 
     widgetService.$inject = ['$http', 'exception', 'logger', 'APP_CONFIG'];

@@ -13,7 +13,8 @@
 
         var service = {
             getCurrentUser: getCurrentUser,
-            updateCurrentUser: updateCurrentUser
+            updateCurrentUser: updateCurrentUser,
+            changeCurrentUserPassword: changeCurrentUserPassword
         };
         return service;
 
@@ -42,9 +43,19 @@
             }
             function fail(e) {
                 return exception.catcher('XHR Failed for updateCurrentUser')(e);
-            }
+            }     
+        }
 
-            
+        function changeCurrentUserPassword(changedPassword) {
+            return $http.put(serviceBase + 'api/Account/ChangePassword', changedPassword)
+                .then(success)
+                .catch(fail);
+            function success(response) {
+                return response.data;
+            }
+            function fail(e) {
+                return exception.catcher('XHR Failed for updateCurrentUser')(e);
+            }
         }
 
         function syncLocalUser(first, last) {
