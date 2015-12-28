@@ -28,6 +28,12 @@
                     logger.success('Got Widgets.');
                 });
         }
-
+        vm.getbymanufacturer = function (manufacturer) {
+            widgetService.getWidgetsByManufacturer(manufacturer)
+                .then(function (widget) {
+                    vm.widgets = widget;
+                    logger.success('Got Manufacturer Widgets.');
+                });
+        };
     }
 })();

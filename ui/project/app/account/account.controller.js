@@ -46,7 +46,7 @@
                     logger.success('Got the user account');
                 });
         }
-// testing source control
+
         vm.update = function (user) {
             accountService.updateCurrentUser(user).then(function () {
                 logger.success('Account Updated');
@@ -60,7 +60,7 @@
                 logger.success('Password Changed');
                 vm.message = 'Password Changed';
                 vm.editPassword = 0;
-            })
+            });
 
         };
     }

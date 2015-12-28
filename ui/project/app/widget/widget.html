@@ -41,20 +41,31 @@
         </ul>
     </div>
 
+
     <div class="card-body card-padding">
+
+        <div>
+            <input type="text" ng-model="vm.manufacturer" /> <button ng-click="vm.getbymanufacturer(vm.manufacturer)">Search</button>
+        </div>
+        <div>
+            <input type="text" ng-model="vm.manufacturer2" /> 
+        </div>
+
         <table class="table table-condensed table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
                     <th>Description</th>
+                    <th>Manufacturer</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="w in vm.widgets">
+                <tr ng-repeat="w in vm.widgets | filter:vm.manufacturer2">
                     <td>{{w.Id}}</td>
                     <td>{{w.Name}}</td>
                     <td>{{w.Description}}</td>
+                    <td>{{w.Manufacturer}}</td>
                 </tr>
             </tbody>
         </table>
