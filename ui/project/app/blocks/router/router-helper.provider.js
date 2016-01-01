@@ -88,7 +88,7 @@
                     var requireAuth = toState.settings.requireAuth;
 
                     if (requireAuth && (typeof $rootScope.currentUser === 'undefined' || $rootScope.currentUser.authorized !== true)) {
-                        logger.warning('THIS PAGE REQUIRES A LOGIN!');
+                        logger.warning('Please login to continue');
                         event.preventDefault();
                         authService.openLoginModal()
                             .then(function (result) {

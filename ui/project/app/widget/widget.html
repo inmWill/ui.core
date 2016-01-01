@@ -9,13 +9,10 @@
 
             <ul class="dropdown-menu dropdown-menu-right">
                 <li>
-                    <a href="">Refresh</a>
+                    <a href="" ng-click="vm.refresh()">Refresh</a>
                 </li>
                 <li>
-                    <a href="">Manage Widgets</a>
-                </li>
-                <li>
-                    <a href="">Widgets Settings</a>
+                    <a href="">Edit Widgets (TBD)</a>
                 </li>
             </ul>
         </li>
@@ -24,50 +21,47 @@
 </div>
 <div class="card">
     <div class="card-header">
-        <h2>My Widget</h2>
-
-        <ul class="actions">
-            <li class="dropdown action-show" uib-dropdown>
-                <a href="" uib-dropdown-toggle>
-                    <i class="zmdi zmdi-more-vert"></i>
-                </a>
-
-                <div class="dropdown-menu pull-right">
-                    <p class="p-20">
-                        You can put anything here
-                    </p>
-                </div>
-            </li>
-        </ul>
+        <h2>My Widgets</h2>
     </div>
 
 
     <div class="card-body card-padding">
 
-        <div>
-            <input type="text" ng-model="vm.manufacturer" /> <button ng-click="vm.getbymanufacturer(vm.manufacturer)">Search</button>
-        </div>
-        <div>
-            <input type="text" ng-model="vm.manufacturer2" /> 
+        <!--<div>
+            <input type="text" ng-model="vm.manufacturer"/> <button ng-click="vm.getbymanufacturer(vm.manufacturer)">Search</button>
+        </div>-->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <div class="fg-line">
+                        <input type="text" class="form-control input-lg" ng-model="vm.filter" placeholder="Filter" />
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <table class="table table-condensed table-striped">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Manufacturer</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="w in vm.widgets | filter:vm.manufacturer2">
-                    <td>{{w.Id}}</td>
-                    <td>{{w.Name}}</td>
-                    <td>{{w.Description}}</td>
-                    <td>{{w.Manufacturer}}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Manufacturer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="w in vm.widgets | filter:vm.filter">
+                            <td>{{w.Id}}</td>
+                            <td>{{w.Name}}</td>
+                            <td>{{w.Description}}</td>
+                            <td>{{w.Manufacturer}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

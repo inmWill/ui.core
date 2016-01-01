@@ -17,7 +17,7 @@
         function activate() {
             var promises = [getWidgets()];
             return $q.all(promises).then(function () {
-                logger.info('Activated Widget View.');
+                logger.info('Activated Widget View');
             });
         }
 
@@ -25,15 +25,20 @@
             widgetService.getWidgets()
                 .then(function(widget) {
                     vm.widgets = widget;
-                    logger.success('Got Widgets.');
+                    logger.success('Got Widgets');
                 });
         }
+
         vm.getbymanufacturer = function (manufacturer) {
             widgetService.getWidgetsByManufacturer(manufacturer)
                 .then(function (widget) {
                     vm.widgets = widget;
-                    logger.success('Got Manufacturer Widgets.');
+                    logger.success('Got Manufacturer Widgets');
                 });
+        };
+
+        vm.refresh = function() {
+            activate();
         };
     }
 })();
