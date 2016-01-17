@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header low">
+<div class="header high">
     <h1>Code coverage report for <span class="entity">./app/widget/widget.controller.js</span></h1>
     <h2>
-        Statements: <span class="metric">30% <small>(6 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">81.82% <small>(18 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">12.5% <small>(1 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">30% <small>(6 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">66.67% <small>(6 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">81.82% <small>(18 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/widget/</a> &#187; widget.controller.js</div>
@@ -64,7 +64,12 @@
 37
 38
 39
-40</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+40
+41
+42
+43
+44
+45</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -74,32 +79,37 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -112,33 +122,38 @@
 &nbsp;
     WidgetController.$inject = ['$q', 'widgetService', 'logger'];
     /* @ngInject */
-<span class="fstat-no" title="function not covered" >    function WidgetController($q, widgetService, logger) {</span>
-<span class="cstat-no" title="statement not covered" >        var vm = this;</span>
-<span class="cstat-no" title="statement not covered" >        vm.title = 'Widget';</span>
-<span class="cstat-no" title="statement not covered" >        vm.widgets = [];</span>
+    function WidgetController($q, widgetService, logger) {
+        var vm = this;
+        vm.title = 'Widget';
+        vm.widgets = [];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        activate();</span>
+        activate();
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function activate() {</span>
-<span class="cstat-no" title="statement not covered" >            var promises = [getWidgets()];</span>
-<span class="cstat-no" title="statement not covered" >            return $q.all(promises).then(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                logger.info('Activated Widget View.');</span>
+        function activate() {
+            var promises = [getWidgets()];
+            return $q.all(promises).then(function () {
+                logger.info('Activated Widget View');
             });
         }
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function getWidgets() {</span>
-<span class="cstat-no" title="statement not covered" >            widgetService.getWidgets()</span>
-                .then(<span class="fstat-no" title="function not covered" >function(widget) {</span>
-<span class="cstat-no" title="statement not covered" >                    vm.widgets = widget;</span>
-<span class="cstat-no" title="statement not covered" >                    logger.success('Got Widgets.');</span>
+        function getWidgets() {
+            widgetService.getWidgets()
+                .then(function(widget) {
+                    vm.widgets = widget;
+                    logger.success('Got Widgets');
                 });
         }
-<span class="cstat-no" title="statement not covered" >        vm.getbymanufacturer = <span class="fstat-no" title="function not covered" >function (manufacturer) {</span></span>
+&nbsp;
+        vm.getbymanufacturer = <span class="fstat-no" title="function not covered" >function (manufacturer) {</span>
 <span class="cstat-no" title="statement not covered" >            widgetService.getWidgetsByManufacturer(manufacturer)</span>
                 .then(<span class="fstat-no" title="function not covered" >function (widget) {</span>
 <span class="cstat-no" title="statement not covered" >                    vm.widgets = widget;</span>
-<span class="cstat-no" title="statement not covered" >                    logger.success('Got Manufacturer Widgets.');</span>
+<span class="cstat-no" title="statement not covered" >                    logger.success('Got Manufacturer Widgets');</span>
                 });
+        };
+&nbsp;
+        vm.refresh = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            activate();</span>
         };
     }
 })();
@@ -147,7 +162,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 28 2015 22:46:59 GMT-0700 (Mountain Standard Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 17 2016 15:20:45 GMT-0700 (Mountain Standard Time)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

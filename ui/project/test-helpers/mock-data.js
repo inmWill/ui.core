@@ -4,7 +4,8 @@ var mockData = (function () {
         getMockPeople: getMockPeople,
         getMockStates: getMockStates,
         getMockToken: getMockToken,
-        getMockUser: getMockUser
+        getMockUser: getMockUser,
+        getMockWidgets: getMockWidgets
     };
 
     function getMockUser() {
@@ -67,6 +68,13 @@ var mockData = (function () {
             { id: 5, firstName: 'Ella', lastName: 'Jobs', age: 18, location: 'South Dakota' },
             { id: 6, firstName: 'Landon', lastName: 'Gates', age: 11, location: 'South Carolina' },
             { id: 7, firstName: 'Haley', lastName: 'Guthrie', age: 35, location: 'Wyoming' }
+        ];
+    }
+
+    function getMockWidgets() {
+        return [
+            { Id: 1, Name: 'My First Widget', Description: 'A test widget', Manufacturer: 'Inmerge', ModifiedById: 1, CreatedOn: '2016-01-16', ModifiedOn: '2016-01-17', IpAddress: "192.0.0.1" },
+            { Id: 2, Name: 'My Second Widget', Description: 'A test widget', Manufacturer: 'Woodsilks', ModifiedById: 1, CreatedOn: '2016-01-16', ModifiedOn: '2016-01-17', IpAddress: "192.0.0.1" }
         ];
     }
 })();
