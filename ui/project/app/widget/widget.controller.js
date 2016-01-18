@@ -11,6 +11,8 @@
         var vm = this;
         vm.title = 'Widget';
         vm.widgets = [];
+        vm.editMode = false;
+        vm.editLabel = 'Edit Widgets';
 
         activate();
 
@@ -34,6 +36,23 @@
                 .then(function (widget) {
                     vm.widgets = widget;
                     logger.success('Got Manufacturer Widgets');
+                });
+        };
+
+        vm.toggleEdit = function() {
+            if (vm.editMode) {
+                vm.editMode = false;
+                vm.editLabel = 'Edit Widgets';
+            } else {
+                vm.editMode = true;
+                vm.editLabel = 'Cancel Edit';
+            }
+        };
+
+        vm.updateWidget = function(widget) {
+            widgetService.updateWidget(widget)
+                .then(function (result) {
+                    logger.success('Widget Updated');
                 });
         };
 

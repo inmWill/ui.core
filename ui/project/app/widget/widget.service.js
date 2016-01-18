@@ -12,6 +12,7 @@
 
         var service = {
             getWidgets: getWidgets,
+            updateWidget: updateWidget,
             getWidgetsByManufacturer: getWidgetsByManufacturer
     };
 
@@ -28,6 +29,19 @@
                 return exception.catcher('XHR Failed for getWidgets')(e);
             }
         }
+
+        function updateWidget(widget) {
+            return $http.put(serviceBase + 'api/Widget/Put', widget)
+                .then(success)
+                .catch(fail);
+            function success(response) {
+                return response.data;
+            }
+            function fail(e) {
+                return exception.catcher('XHR Failed for updateWidget')(e);
+            }
+        }
+
         function getWidgetsByManufacturer(manufacturer) {
             return $http.get(serviceBase + 'api/Widget/GetByManufacturer?whichManufacturer='+manufacturer)
                 .then(success)

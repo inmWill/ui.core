@@ -12,7 +12,7 @@
                     <a href="" ng-click="vm.refresh()">Refresh</a>
                 </li>
                 <li>
-                    <a href="">Edit Widgets (TBD)</a>
+                    <a href="" ng-click="vm.toggleEdit()">{{vm.editLabel}}</a>
                 </li>
             </ul>
         </li>
@@ -27,9 +27,6 @@
 
     <div class="card-body card-padding">
 
-        <!--<div>
-            <input type="text" ng-model="vm.manufacturer"/> <button ng-click="vm.getbymanufacturer(vm.manufacturer)">Search</button>
-        </div>-->
         <div class="row">
             <div class="col-md-3">
                 <div class="form-group">
@@ -43,7 +40,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <table class="table table-condensed table-striped">
+                <table class="table table-condensed">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -54,10 +51,28 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="w in vm.widgets | filter:vm.filter">
-                            <td>{{w.Id}}</td>
-                            <td>{{w.Name}}</td>
-                            <td>{{w.Description}}</td>
-                            <td>{{w.Manufacturer}}</td>
+                            <td>
+                                {{w.Id}}
+                            </td>
+                            <td>
+                                <div ng-hide="vm.editMode">{{w.Name}}</div>
+                                <div ng-show="vm.editMode"><input type="text" class="form-control" ng-model="w.Name" /></div>
+                            </td>
+                            <td>
+                                <div ng-hide="vm.editMode">{{w.Description}}</div>
+                                <div ng-show="vm.editMode"><input type="text" class="form-control" ng-model="w.Description" /></div>
+                            </td>
+                            <td>
+                                <div ng-hide="vm.editMode">{{w.Manufacturer}}</div>
+                                <div ng-show="vm.editMode">
+                                    <input type="text" class="form-control" ng-model="w.Manufacturer" />
+                                </div>
+                            </td>
+                            <td>
+                                <div ng-show="vm.editMode">
+                                    <button class="btn btn-link" ng-click="vm.updateWidget(w)">Update</button>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

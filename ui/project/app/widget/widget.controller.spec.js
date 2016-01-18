@@ -38,10 +38,44 @@ describe('WidgetController', function () {
                 expect(controller.widgets).to.have.length(2);
             });
 
+            it('should not be in edit mode', function() {
+                expect(controller.editMode).to.equal(false);
+                expect(controller.editLabel).to.equal('Edit Widgets');
+            });
         });
 
-        describe('after clicking edit', function() {
-            
+        describe('after clicking edit', function () {
+            beforeEach(function () {
+                controller.toggleEdit();
+                $rootScope.$apply();
+            });
+
+            it('should be in edit mode', function() {
+                expect(controller.editMode).to.equal(true);
+                expect(controller.editLabel).to.equal('Cancel Edit');
+            });
+
+            it('should exit edit mode if toggle edit is clicked again.', function() {
+                controller.toggleEdit();
+                $rootScope.$apply();
+                expect(controller.editMode).to.equal(false);
+                expect(controller.editLabel).to.equal('Edit Widgets');
+            });
         });
+
+        describe('after successfully updating widget', function() {
+            beforeEach(function () {
+                sinon.stub(widgetService, 'updateWidget').returns($q.when(true));
+                controller.toggleEdit();
+                controller.updateWidget(widgets[0]);
+                $rootScope.$apply();
+            });
+
+            it('should have logged "Widget Updated"', function () {
+                expect($log.info.logs).to.match(/Widget Updated/);
+            });
+
+        });
+
     });
 });

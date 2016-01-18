@@ -1,4 +1,4 @@
-/// <binding BeforeBuild='build-specs, inject, vet, test' />
+/// <binding BeforeBuild='build-specs, inject, test' />
 var args = require('yargs').argv;
 var browserSync = require('browser-sync');
 var config = require('./gulp.config')();
