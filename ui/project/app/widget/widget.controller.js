@@ -13,6 +13,7 @@
         vm.widgets = [];
         vm.editMode = false;
         vm.editLabel = 'Edit Widgets';
+        vm.lastCreated = {};
 
         activate();
 
@@ -24,8 +25,8 @@
         }
 
         function getWidgets() {
-            widgetService.getWidgets()
-                .then(function(widget) {
+            widgetService.get()
+                .then(function (widget) {
                     vm.widgets = widget;
                     logger.success('Got Widgets');
                 });
@@ -39,7 +40,7 @@
                 });
         };
 
-        vm.toggleEdit = function() {
+        vm.toggleEdit = function () {
             if (vm.editMode) {
                 vm.editMode = false;
                 vm.editLabel = 'Edit Widgets';
@@ -49,14 +50,42 @@
             }
         };
 
-        vm.updateWidget = function(widget) {
-            widgetService.updateWidget(widget)
+        vm.updateWidget = function (widget) {
+            widgetService.put(widget)
                 .then(function (result) {
-                    logger.success('Widget Updated');
+                    if (result) {
+                        logger.success('Widget Updated');
+                    } else {
+                        logger.error('Error Updating Widget');
+                    }
                 });
         };
 
-        vm.refresh = function() {
+        vm.createWidget = function (widget) {
+            widgetService.post(widget)
+                .then(function (result) {
+                    vm.lastCreated = result;
+                    vm.widgets.push(result);
+                    logger.success('Widget Created');
+                });
+        };
+
+        vm.deleteWidget = function (widget) {
+            widgetService.del(widget)
+                .then(function (result) {
+                    if (result === 1) {                       
+                        var i = vm.widgets.indexOf(widget);
+                        if (i !== -1) {
+                            vm.widgets.splice(i, 1);
+                            logger.warning('Widget Deleted');
+                        }
+                    } else {
+                        logger.error('Error Deleting Widget');
+                    }
+                });
+        }
+
+        vm.refresh = function () {
             activate();
         };
     }

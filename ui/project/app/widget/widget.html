@@ -28,6 +28,17 @@
     <div class="card-body card-padding">
 
         <div class="row">
+            <div class="col-md-12">
+                Id: {{vm.lastCreated.Id}}
+                Name: {{vm.lastCreated.Name}}
+                Description: {{vm.lastCreated.Description}}
+                Manufacturer: {{vm.lastCreated.Manufacturer}}
+                Created On: {{vm.lastCreated.CreatedOn}}
+                Modified On: {{vm.lastCreated.ModifiedOn}}
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-md-3">
                 <div class="form-group">
                     <div class="fg-line">
@@ -56,11 +67,15 @@
                             </td>
                             <td>
                                 <div ng-hide="vm.editMode">{{w.Name}}</div>
-                                <div ng-show="vm.editMode"><input type="text" class="form-control" ng-model="w.Name" /></div>
+                                <div ng-show="vm.editMode">
+                                    <input type="text" class="form-control" ng-model="w.Name" />
+                                </div>
                             </td>
                             <td>
                                 <div ng-hide="vm.editMode">{{w.Description}}</div>
-                                <div ng-show="vm.editMode"><input type="text" class="form-control" ng-model="w.Description" /></div>
+                                <div ng-show="vm.editMode">
+                                    <input type="text" class="form-control" ng-model="w.Description" />
+                                </div>
                             </td>
                             <td>
                                 <div ng-hide="vm.editMode">{{w.Manufacturer}}</div>
@@ -70,12 +85,35 @@
                             </td>
                             <td>
                                 <div ng-show="vm.editMode">
-                                    <button class="btn btn-link" ng-click="vm.updateWidget(w)">Update</button>
+                                    <button class="btn btn-link" id="btnUpdateWidget" ng-click="vm.updateWidget(w)">Update</button>
+                                    <button class="btn btn-link" id="deleteWidget" ng-click="vm.deleteWidget(w)">Delete</button>
                                 </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <div class="fg-line">
+                        <input type="text" class="form-control input-lg" ng-model="vm.newWidget.Name" placeholder="Name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="fg-line">
+                        <input type="text" class="form-control input-lg" ng-model="vm.newWidget.Description" placeholder="Description" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="fg-line">
+                        <input type="text" class="form-control input-lg" ng-model="vm.newWidget.Manufacturer" placeholder="Manufacturer"/>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" id="btnCreateWidget" ng-click="vm.createWidget(vm.newWidget)">Create Widget</button>
             </div>
         </div>
     </div>

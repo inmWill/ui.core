@@ -15,10 +15,10 @@
 <div class="header medium">
     <h1>Code coverage report for <span class="entity">./app/widget/widget.service.js</span></h1>
     <h2>
-        Statements: <span class="metric">68.42% <small>(13 / 19)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">61.29% <small>(19 / 31)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">25% <small>(2 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">68.42% <small>(13 / 19)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">14.29% <small>(2 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">61.29% <small>(19 / 31)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/widget/</a> &#187; widget.service.js</div>
@@ -68,7 +68,34 @@
 41
 42
 43
-44</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -78,14 +105,16 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">13</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -96,6 +125,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -124,13 +178,15 @@
         var serviceBase = APP_CONFIG.serviceURIBase;
 &nbsp;
         var service = {
-            getWidgets: getWidgets,
+            get: get,
+            post: post,
+            put: put,
             getWidgetsByManufacturer: getWidgetsByManufacturer
     };
 &nbsp;
         return service;
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function getWidgets() {</span>
+<span class="fstat-no" title="function not covered" >        function get() {</span>
 <span class="cstat-no" title="statement not covered" >            return $http.get(serviceBase + 'api/Widget/GetAll')</span>
                 .then(success)
                 .catch(fail);
@@ -138,9 +194,34 @@
 <span class="cstat-no" title="statement not covered" >                return response.data;</span>
             }
 <span class="fstat-no" title="function not covered" >            function fail(e) {</span>
-<span class="cstat-no" title="statement not covered" >                return exception.catcher('XHR Failed for getWidgets')(e);</span>
+<span class="cstat-no" title="statement not covered" >                return exception.catcher('XHR Failed for get')(e);</span>
             }
         }
+&nbsp;
+<span class="fstat-no" title="function not covered" >        function post(widget) {</span>
+<span class="cstat-no" title="statement not covered" >            return $http.put(serviceBase + 'api/Widget/Post', widget)</span>
+                .then(success)
+                .catch(fail);
+<span class="fstat-no" title="function not covered" >            function success(response) {</span>
+<span class="cstat-no" title="statement not covered" >                return response.data;</span>
+            }
+<span class="fstat-no" title="function not covered" >            function fail(e) {</span>
+<span class="cstat-no" title="statement not covered" >                return exception.catcher('XHR Failed for create')(e);</span>
+            }
+        }
+&nbsp;
+<span class="fstat-no" title="function not covered" >        function put(widget) {</span>
+<span class="cstat-no" title="statement not covered" >            return $http.put(serviceBase + 'api/Widget/Put', widget)</span>
+                .then(success)
+                .catch(fail);
+<span class="fstat-no" title="function not covered" >            function success(response) {</span>
+<span class="cstat-no" title="statement not covered" >                return response.data;</span>
+            }
+<span class="fstat-no" title="function not covered" >            function fail(e) {</span>
+<span class="cstat-no" title="statement not covered" >                return exception.catcher('XHR Failed for update')(e);</span>
+            }
+        }
+&nbsp;
 <span class="fstat-no" title="function not covered" >        function getWidgetsByManufacturer(manufacturer) {</span>
 <span class="cstat-no" title="statement not covered" >            return $http.get(serviceBase + 'api/Widget/GetByManufacturer?whichManufacturer='+manufacturer)</span>
                 .then(success)
@@ -159,7 +240,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jan 17 2016 16:43:57 GMT-0700 (Mountain Standard Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 22 2016 21:41:32 GMT-0700 (Mountain Standard Time)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

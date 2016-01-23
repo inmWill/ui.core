@@ -5,7 +5,9 @@ var mockData = (function () {
         getMockStates: getMockStates,
         getMockToken: getMockToken,
         getMockUser: getMockUser,
-        getMockWidgets: getMockWidgets
+        getMockWidgets: getMockWidgets,
+        getCreatedWidget: getCreatedWidget,
+        getNewWidgetInputModel: getNewWidgetInputModel
     };
 
     function getMockUser() {
@@ -73,8 +75,31 @@ var mockData = (function () {
 
     function getMockWidgets() {
         return [
-            { Id: 1, Name: 'My First Widget', Description: 'A test widget', Manufacturer: 'Inmerge', ModifiedById: 1, CreatedOn: '2016-01-16', ModifiedOn: '2016-01-17', IpAddress: "192.0.0.1" },
-            { Id: 2, Name: 'My Second Widget', Description: 'A test widget', Manufacturer: 'Woodsilks', ModifiedById: 1, CreatedOn: '2016-01-16', ModifiedOn: '2016-01-17', IpAddress: "192.0.0.1" }
+            { Id: 1, Name: 'My First Widget', Description: 'A test widget', Manufacturer: 'Inmerge', ModifiedById: 1, CreatedOn: '2016-01-16', ModifiedOn: '2016-01-17', IpAddress: '192.0.0.1' },
+            { Id: 2, Name: 'My Second Widget', Description: 'A test widget', Manufacturer: 'Woodsilks', ModifiedById: 1, CreatedOn: '2016-01-16', ModifiedOn: '2016-01-17', IpAddress: '192.0.0.1' }
         ];
     }
+
+    function getCreatedWidget() {
+        return {
+            Id: 3,
+            Name: 'My Third Widget',
+            Description: 'A new test widget',
+            Manufacturer: 'Radix',
+            ModifiedById: 1,
+            CreatedOn: '2016-01-21',
+            ModifiedOn: '2016-01-21',
+            IpAddress: '192.0.0.1'
+        };
+    }
+
+    function getNewWidgetInputModel() {
+        return {
+            Name: 'My Third Widget',
+            Description: 'A new test widget',
+            Manufacturer: 'Radix'
+        };
+    }
+    
+
 })();

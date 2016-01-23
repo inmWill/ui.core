@@ -2,6 +2,9 @@
 describe('WidgetController', function () {
     var controller;
     var widgets = mockData.getMockWidgets();  // fake widgets array
+    var initialWidgetCount = widgets.length;
+    var newWidgetInputModel = mockData.getNewWidgetInputModel();
+    var createdWidget = mockData.getCreatedWidget();
 
     beforeEach(function() {
         bard.appModule('app.widget');
@@ -9,14 +12,15 @@ describe('WidgetController', function () {
     });
 
     beforeEach(function () {
-        sinon.stub(widgetService, 'getWidgets').returns($q.when(widgets));
+        sinon.stub(widgetService, 'get').returns($q.when(widgets));
         controller = $controller('WidgetController');
         $rootScope.$apply();
     });
 
     bard.verifyNoOutstandingHttpRequests();
 
-    describe('Widget controller', function() {
+    describe('Widget controller', function () {
+
         it('should be created successfully', function () {
             expect(controller).to.be.defined;
         });
@@ -42,6 +46,10 @@ describe('WidgetController', function () {
                 expect(controller.editMode).to.equal(false);
                 expect(controller.editLabel).to.equal('Edit Widgets');
             });
+
+            it('should not have a last created widget', function () {
+                expect(controller.lastCreated).to.be.empty;
+            });
         });
 
         describe('after clicking edit', function () {
@@ -65,7 +73,7 @@ describe('WidgetController', function () {
 
         describe('after successfully updating widget', function() {
             beforeEach(function () {
-                sinon.stub(widgetService, 'updateWidget').returns($q.when(true));
+                sinon.stub(widgetService, 'put').returns($q.when(true));
                 controller.toggleEdit();
                 controller.updateWidget(widgets[0]);
                 $rootScope.$apply();
@@ -74,6 +82,47 @@ describe('WidgetController', function () {
             it('should have logged "Widget Updated"', function () {
                 expect($log.info.logs).to.match(/Widget Updated/);
             });
+
+        });
+
+        describe('after successfully adding a new widget', function () {
+            beforeEach(function () {
+                sinon.stub(widgetService, 'post').returns($q.when(createdWidget));
+                controller.toggleEdit();
+                controller.createWidget(newWidgetInputModel);
+                initialWidgetCount = widgets.length;
+                $rootScope.$apply();
+            });
+
+            it('should have logged "Widget Created"', function () {
+                expect($log.info.logs).to.match(/Widget Created/);
+            });
+
+            it('should have a last created widget', function () {
+                expect(controller.lastCreated).equal(createdWidget);
+            });
+
+            it('should add an item to the widgets array', function() {
+                expect(controller.widgets.length).above(initialWidgetCount);
+            });
+        });
+
+        describe('after successfully deleting a widget', function () {
+            beforeEach(function () {
+                sinon.stub(widgetService, 'del').returns($q.when(1));
+                controller.toggleEdit();
+                controller.deleteWidget(controller.widgets[1]);
+                $rootScope.$apply();
+            });
+
+            it('should have logged a warning "Widget Deleted"', function () {
+                expect($log.warn.logs).to.match(/Widget Deleted/);
+            });
+
+            it('should remove the item from the widgets array', function () {
+                expect(controller.widgets.length).below(initialWidgetCount);
+            });
+
 
         });
 
