@@ -2366,8 +2366,6 @@
     <Content Include="build\images\Logos\consovalogo-sm.png" />
     <Content Include="build\images\Logos\consovalogo.png" />
     <Content Include="build\index.html" />
-    <Content Include="e2e_tests\conf.js" />
-    <Content Include="e2e_tests\nav\nav.spec.js" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\Material-Design-Iconic-Font.svg" />

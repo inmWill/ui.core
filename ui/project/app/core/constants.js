@@ -15,8 +15,8 @@
         })
         .constant('APP_CONFIG', {
             clientId: 'coreAzureApp',
-              serviceURIBase: 'http://localhost:51517/',
-      //  serviceURIBase: 'http://apicore.azurewebsites.net/',
+       //       serviceURIBase: 'http://localhost:51517/',
+        serviceURIBase: 'http://apicore.azurewebsites.net/',
             isRegistered: true
  
         });

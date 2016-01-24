@@ -6,10 +6,8 @@ var del = require('del');
 var glob = require('glob');
 var gulp = require('gulp');
 var path = require('path');
-var protractor = require("gulp-protractor").protractor;
 var _ = require('lodash');
 var $ = require('gulp-load-plugins')({lazy: true});
-
 var colors = $.util.colors;
 var envenv = $.util.env;
 var port = process.env.PORT || config.defaultPort;
@@ -96,23 +94,6 @@ gulp.task('images', ['clean-images'], function() {
         .src(config.images)
         .pipe($.imagemin({optimizationLevel: 4}))
         .pipe(gulp.dest(config.build + 'images'));
-});
-
-/**
- * Run Protractor Tests
- * @return {Stream}
- */
-// Setting up the test task 
-gulp.task('testE2E', function () {
-    log('Starting Protractor Tests');
-    gulp
-        .src(['./e2e_tests/**/*.js'])
-        .pipe(protractor({
-            'configFile': './e2e_tests/conf.js'
-        }))
-        .on('error', function (e) {
-            console.log(e);
-        })
 });
 
 gulp.task('less-watcher', function() {
