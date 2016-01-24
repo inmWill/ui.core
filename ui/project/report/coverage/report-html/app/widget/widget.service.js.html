@@ -15,10 +15,10 @@
 <div class="header medium">
     <h1>Code coverage report for <span class="entity">./app/widget/widget.service.js</span></h1>
     <h2>
-        Statements: <span class="metric">61.29% <small>(19 / 31)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">59.46% <small>(22 / 37)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">14.29% <small>(2 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">61.29% <small>(19 / 31)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">11.76% <small>(2 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">59.46% <small>(22 / 37)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/widget/</a> &#187; widget.service.js</div>
@@ -95,7 +95,20 @@
 68
 69
 70
-71</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -105,16 +118,29 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">15</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -181,6 +207,7 @@
             get: get,
             post: post,
             put: put,
+            del: del,
             getWidgetsByManufacturer: getWidgetsByManufacturer
     };
 &nbsp;
@@ -199,7 +226,7 @@
         }
 &nbsp;
 <span class="fstat-no" title="function not covered" >        function post(widget) {</span>
-<span class="cstat-no" title="statement not covered" >            return $http.put(serviceBase + 'api/Widget/Post', widget)</span>
+<span class="cstat-no" title="statement not covered" >            return $http.post(serviceBase + 'api/Widget/Post', widget)</span>
                 .then(success)
                 .catch(fail);
 <span class="fstat-no" title="function not covered" >            function success(response) {</span>
@@ -222,6 +249,18 @@
             }
         }
 &nbsp;
+<span class="fstat-no" title="function not covered" >        function del(widget) {</span>
+<span class="cstat-no" title="statement not covered" >            return $http.delete(serviceBase + 'api/Widget/Delete?id='+ widget.Id)</span>
+                .then(success)
+                .catch(fail);
+<span class="fstat-no" title="function not covered" >            function success(response) {</span>
+<span class="cstat-no" title="statement not covered" >                return response.data;</span>
+            }
+<span class="fstat-no" title="function not covered" >            function fail(e) {</span>
+<span class="cstat-no" title="statement not covered" >                return exception.catcher('XHR Failed for delete')(e);</span>
+            }
+        }
+&nbsp;
 <span class="fstat-no" title="function not covered" >        function getWidgetsByManufacturer(manufacturer) {</span>
 <span class="cstat-no" title="statement not covered" >            return $http.get(serviceBase + 'api/Widget/GetByManufacturer?whichManufacturer='+manufacturer)</span>
                 .then(success)
@@ -240,7 +279,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 22 2016 21:41:32 GMT-0700 (Mountain Standard Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jan 23 2016 15:46:28 GMT-0700 (Mountain Standard Time)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

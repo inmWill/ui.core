@@ -70,10 +70,10 @@
                 });
         };
 
-        vm.deleteWidget = function (widget) {
+        vm.deleteWidget = function(widget) {
             widgetService.del(widget)
-                .then(function (result) {
-                    if (result === 1) {                       
+                .then(function(result) {
+                    if (result === 1) {
                         var i = vm.widgets.indexOf(widget);
                         if (i !== -1) {
                             vm.widgets.splice(i, 1);
@@ -83,7 +83,7 @@
                         logger.error('Error Deleting Widget');
                     }
                 });
-        }
+        };
 
         vm.refresh = function () {
             activate();
