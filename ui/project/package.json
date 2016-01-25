@@ -71,8 +71,6 @@
     "node-notifier": "^4.0.3",
     "phantomjs": "^1.9.18",
     "plato": "^1.2.0",
-    "protractor": "^3.0.0",
-    "protractor-html-screenshot-reporter": "^0.0.21",
     "q": "^1.0.1",
     "sinon": "^1.12.2",
     "sinon-chai": "^2.6.0",
