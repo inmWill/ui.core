@@ -1,0 +1,16 @@
+﻿{
+  "local": {
+    "APP_CONFIG": {
+      "serviceURIBase": "http://localhost:51517/",
+      "clientId": "coreApp",
+      "isRegistered": true
+    }
+  },
+  "production": {
+    "APP_CONFIG": {
+      "serviceURIBase": "http://apicore.azurewebsites.net/",
+      "clientId": "coreAzureApp",
+      "isRegistered": true
+    }
+  }
+}

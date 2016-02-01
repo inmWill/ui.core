@@ -97,6 +97,7 @@
     <Content Include="app\app.module.js" />
     <Content Include="app\core\404.html" />
     <Content Include="app\core\config.js" />
+    <Content Include="app\core\core.config.js" />
     <Content Include="app\core\constants.js" />
     <Content Include="app\core\core.module.js" />
     <Content Include="app\core\core.route.js" />
@@ -4587,6 +4588,7 @@
     <Content Include="bower_components\ng-password-strength\package.json" />
     <Content Include="bower_components\ng-password-strength\README.md" />
     <Content Include="bower_components\ng-password-strength\test\.jshintrc" />
+    <Content Include="config.json" />
     <None Include="Properties\PublishProfiles\OCVNgUI_Sandcastle_Development.pubxml" />
     <Content Include="server\app.js" />
     <Content Include="server\data.js" />

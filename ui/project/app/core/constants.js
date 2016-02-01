@@ -12,12 +12,12 @@
             accountUpdated: 'auth-account-updated'
             //notAuthenticated: 'auth-not-authenticated',
             //notAuthorized: 'auth-not-authorized',
-        })
-        .constant('APP_CONFIG', {
-            clientId: 'coreAzureApp',
-              serviceURIBase: 'http://localhost:51517/',
-      //  serviceURIBase: 'http://apicore.azurewebsites.net/',
-            isRegistered: true
- 
         });
+    //  .constant('APP_CONFIG', {
+    //      clientId: 'coreAzureApp',
+    //        serviceURIBase: 'http://localhost:51517/',
+    ////  serviceURIBase: 'http://apicore.azurewebsites.net/',
+    //      isRegistered: true
+
+    //  });
 })();

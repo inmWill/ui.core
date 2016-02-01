@@ -1,7 +1,8 @@
-/// <binding BeforeBuild='build-specs, inject, test' />
+/// <binding BeforeBuild='config, build-specs, inject, test' />
 var args = require('yargs').argv;
 var browserSync = require('browser-sync');
 var config = require('./gulp.config')();
+var gulpNgConfig = require("gulp-ng-config");
 var del = require('del');
 var glob = require('glob');
 var gulp = require('gulp');
@@ -147,6 +148,27 @@ gulp.task('inject', ['wiredep', 'styles', 'templatecache'], function() {
         .pipe(inject(config.css))
         .pipe(gulp.dest(config.root));
 });
+
+///**
+// * Set Production API URI
+// * 
+// */
+
+gulp.task('config', function () {
+    gulp.src('config.json')
+        .pipe(gulpNgConfig('app.core', {
+            environment: config.environment,
+            wrap: '(function () { <%= module %> })();',
+            createModule: false
+        }))
+        .pipe(gulp.dest('./app/core/'));
+});
+
+//gulp.task('buildConstants', function () {
+//    gulp.src(['./app/core/constants.js'])
+//      .pipe(replace('http://localhost:51517/', config.productionUrl))
+//      .pipe(gulp.dest('build/file.txt'));
+//});
 
 /**
  * Run the spec runner

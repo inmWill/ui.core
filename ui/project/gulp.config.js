@@ -24,8 +24,10 @@ module.exports = function() {
             './app/**/*.js',
             './*.js'
         ],
-    //        build: './build/',
-    build: 'F://Projects/daedalus/deployments/ui_deploy/',
+        //build: './build/',
+        environment: 'local',
+        //environment: 'production',
+        build: 'F://Projects/daedalus/deployments/ui_deploy/',
         client: client,
         //css: temp + 'styles.css', default hottowel
         css: temp + 'app.css',

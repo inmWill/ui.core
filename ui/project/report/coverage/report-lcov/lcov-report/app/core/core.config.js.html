@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for ./app/admin/admin.route.js</title>
+    <title>Code coverage report for ./app/core/core.config.js</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../../prettify.css">
     <link rel="stylesheet" href="../../base.css">
@@ -13,15 +13,15 @@
 </head>
 <body>
 <div class="header high">
-    <h1>Code coverage report for <span class="entity">./app/admin/admin.route.js</span></h1>
+    <h1>Code coverage report for <span class="entity">./app/core/core.config.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(7 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">100% <small>(16 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">50% <small>(1 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Functions: <span class="metric">100% <small>(3 / 3)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(7 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(16 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/admin/</a> &#187; admin.route.js</div>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./app/core/</a> &#187; core.config.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
@@ -63,68 +63,68 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">62</span>
+<span class="cline-any cline-yes">62</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">5</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">62</span>
+<span class="cline-any cline-yes">62</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62</span>
+<span class="cline-any cline-yes">62</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function () {
     'use strict';
 &nbsp;
-    angular
-        .module('app.admin')
-        .run(appRun);
+    var core = angular.module('app.core');
 &nbsp;
-    appRun.$inject = ['routerHelper'];
+    core.config(toastrConfig);
+&nbsp;
+    toastrConfig.$inject = ['toastr'];
     /* @ngInject */
-    function appRun(routerHelper) {
-        routerHelper.configureStates(getStates());
+    function toastrConfig(toastr) {
+        toastr.options.timeOut = 4000;
+        toastr.options.positionClass = 'toast-bottom-right';
     }
 &nbsp;
-    function getStates() {
-        return [
-            {
-                state: 'admin',
-                config: {
-                    url: '/admin',
-                    templateUrl: 'app/admin/admin.html',
-                    controller: 'AdminController',
-                    controllerAs: 'vm',
-                    title: 'Admin',
-                    settings: {
-                        requireAuth: true,
-                        nav: 2,
-                        content: '&lt;i class="fa fa-lock"&gt;&lt;/i&gt; Admin'
-                    }
-                }
-            }
-        ];
+    var config = {
+        appErrorPrefix: '[ui.core Error] ',
+        appTitle: 'ui.core'
+    };
+&nbsp;
+    core.value('config', config);
+&nbsp;
+    core.config(configure);
+&nbsp;
+    configure.$inject = ['$logProvider', 'routerHelperProvider', 'exceptionHandlerProvider'];
+    /* @ngInject */
+    function configure($logProvider, routerHelperProvider, exceptionHandlerProvider) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if ($logProvider.debugEnabled) {
+            $logProvider.debugEnabled(true);
+        }
+        exceptionHandlerProvider.configure(config.appErrorPrefix);
+        routerHelperProvider.configure({ docTitle: config.appTitle + ': ' });
     }
-})();
-&nbsp;</pre></td></tr>
+&nbsp;
+})();</pre></td></tr>
 </table></pre>
 
 </div>
